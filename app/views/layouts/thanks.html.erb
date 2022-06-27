@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title><%= yield(:title) %>みんなの税理士相談所</title>
+    <meta charset="utf-8">
+    <%= yield(:head) if content_for?(:head) %>
+    <!-- Google Tag Manager -->
+    <script>(function(w, d, s, l, i) {
+      w[l] = w[l] || [];
+      w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      });
+      var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+      j.async = true;
+      j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+      f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-P3NK6DH');</script>
+    <!-- End Google Tag Manager -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148509806-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('js', new Date());
+
+      gtag('config', 'UA-148509806-2');
+    </script>
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6e719d999b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link rel="shortcut icon" href="/favicon.ico">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_pack_tag 'application' %>
+  </head>
+
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3NK6DH"
+            height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <%= yield %>
+  <script type="text/javascript">
+    window._pt_lt = new Date().getTime();
+    window._pt_sp_2 = [];
+    _pt_sp_2.push("setAccount,224725a4");
+    var _protocol =(("https:" == document.location.protocol) ? " https://" : " http://");
+    (function() {
+      var atag = document.createElement("script");
+      atag.type = "text/javascript";
+      atag.async = true;
+      atag.src = _protocol + "js.ptengine.jp/224725a4.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(atag, s);
+    })();
+  </script>
+  </body>
+</html>

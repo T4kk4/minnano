@@ -1,0 +1,58 @@
+<% provide(:title, "#{@article.title} - ") %>
+<% provide(:head) do %>
+  <% unless @article.released? %>
+    <meta name="robots" content="noindex">
+  <% end %>
+<% end %>
+<%# if @article.breadcrumb.present? %>
+  <%#= render template: '/components/breadcrumbs2', locals: { article: @article, type: 'topic' } %>
+<%# else %>
+  <% breadcrumb :article, @article %>
+<%# end %>
+<div class="p-article-detail">
+  <p>更新日：<%=@article.updated_at.strftime("%Y年%m月%d日") %></p>
+  <h1 class="c-title">
+    <%= @article.title %>
+  </h1>
+  <% if @article.thumbnail_url.present? %>
+    <div class="p-article-detail__caption">
+      <%= image_tag @article.thumbnail_url, loading: 'lazy', height: 300 %>
+    </div>
+  <% end %>
+  <div class="p-article-detail__main-view">
+    <div class="p-article-detail__left-column">
+      <%= render template: '/components/topic_table_contents', locals: { article: @article } %>
+      <% @article.topic_article_contents.each do |tc| %>
+        <%= render tc.render_with_template(@markdown) %>
+      <% end %>
+    </div>
+    <div class="p-article-detail__right-column">
+      <div class="p-top__head">
+        <h2 class="c-title">
+          よく読まれる記事
+        </h2>
+        <ul class="p-top__article-list">
+          <% @recommend_articles.each do |article| %>
+            <li class="p-top__article-item">
+              <% if article.thumbnail_url.present? %>
+                <span class="p-top__article-img">
+                  <%= image_tag article.thumbnail_url %>
+                </span>
+              <% else %>
+                <span class="p-top__article-img">
+                  <%= image_tag 'noimage.png' %>
+                </span>
+              <% end %>
+              <%= link_to article_path(article) do %>
+                <%= article.title %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <p class="c-link">
+          <%= link_to 'もっと見る', articles_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

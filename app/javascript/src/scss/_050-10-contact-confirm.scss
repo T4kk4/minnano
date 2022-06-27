@@ -1,0 +1,74 @@
+.p-contact-confirm{
+  max-width:1024px; 
+  margin: 32px auto 64px;
+  @media screen and (max-width: 480px) {
+    margin: 24px 16px 48px 16px;
+  }
+  &__txt{
+    font-size: 1.4rem;
+  }
+  &__list{
+    padding:0;
+  }
+  &__item{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    list-style: none;
+    @media screen and (max-width: 480px) {
+      display: block;
+      margin-bottom: 16px;
+    }
+  }
+  &__label{
+    display: inline-block;
+    width: 30%;
+    font-size: 1.4rem;
+    color: $main-color;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      font-size: 1.2rem;
+      margin: 4px 0;
+    }
+  }
+  &__content{
+    display: inline-block;
+    width: 70%;
+    font-size: 1.4rem;
+    @media screen and (max-width: 480px) {
+      width: 100%;
+      margin:0;
+    }
+  }
+  &__btn{
+    text-align: center;
+    margin: 16px 0;
+    button{
+      width: 220px;
+      height: 54px;
+      border-radius: 4px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.3);
+              box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    }
+    a{
+      display: block;
+      text-decoration: none;
+      width: 160px;
+      height: 54px;
+      font-size: 1.4rem;
+      background: #F4F4F4;
+      border-radius: 4px;
+      margin: 24px auto;
+      color: #1d1d1d;
+      padding-top: 16px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      &:visited{
+        color: #1d1d1d;
+      }
+    }
+  }
+}

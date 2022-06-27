@@ -1,0 +1,90 @@
+<% breadcrumb = article.breadcrumb %>
+<% breadcrumb_size = 0 %>
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul class="my-breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <%= link_to root_url, itemprop: "item" do %>
+        <span itemprop="name">みんなの税理士相談所</span>
+      <% end %>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    </li>
+    <% if type == 'article' %>
+      <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <%= link_to articles_url, itemprop: "item" do %>
+          <span itemprop="name">記事一覧</span>
+        <% end %>
+        <% breadcrumb_size += 1 %>
+        <meta itemprop="position" content="<%=breadcrumb_size %>" />
+      </li>
+    <% elsif type == 'topic' %>
+      <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <%= link_to articles_url, itemprop: "item" do %>
+          記事一覧
+        <% end %>
+        <% breadcrumb_size += 1 %>
+        <meta itemprop="position" content="<%=breadcrumb_size %>" />
+      </li>
+    <% end %>
+    <% if breadcrumb.category_1_name.present? %>
+      <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <%= link_to breadcrumb.category_1_url, itemprop: "item" do %>
+          <span itemprop="name"><%= breadcrumb.category_1_name %></span>
+        <% end %>
+        <% breadcrumb_size += 1 %>
+        <meta itemprop="position" content="<%=breadcrumb_size %>" />
+      </li>
+    <% end %>
+    <% if breadcrumb.category_2_name.present? %>
+      <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <%= link_to breadcrumb.category_2_url, itemprop: "item" do %>
+          <span itemprop="name"><%= breadcrumb.category_2_name %></span>
+        <% end %>
+        <% breadcrumb_size += 1 %>
+        <meta itemprop="position" content="<%=breadcrumb_size %>" />
+      </li>
+    <% end %>
+    <% if breadcrumb.category_3_name.present? %>
+      <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <%= link_to breadcrumb.category_3_url, itemprop: "item" do %>
+          <span itemprop="name"><%= breadcrumb.category_3_name %></span>
+        <% end %>
+        <% breadcrumb_size += 1 %>
+        <meta itemprop="position" content="<%=breadcrumb_size %>" />
+      </li>
+    <% end %>
+    <% if breadcrumb.category_4_name.present? %>
+      <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <%= link_to breadcrumb.category_4_url, itemprop: "item" do %>
+          <span itemprop="name"><%= breadcrumb.category_4_name %></span>
+        <% end %>
+      </li>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    <% end %>
+    <% if breadcrumb.category_5_name.present? %>
+      <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+        <%= link_to breadcrumb.category_5_url, itemprop: "item" do %>
+          <span itemprop="name"><%= breadcrumb.category_5_name %></span>
+        <% end %>
+      </li>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    <% end %>
+    <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <% if type == 'article' %>
+        <%= link_to article_url(article.id), itemprop: "item" do %>
+          <span itemprop="name"><%= article.title %></span>
+          <% breadcrumb_size += 1 %>
+          <meta itemprop="position" content="<%=breadcrumb_size %>" />
+        <% end %>
+      <% else %>
+        <%= link_to topic_article_url(article.id), itemprop: "item" do %>
+          <span itemprop="name"><%= article.title %></span>
+        <% end %>
+        <% breadcrumb_size += 1 %>
+        <meta itemprop="position" content="<%=breadcrumb_size %>" />
+      <% end %>
+    </li>
+  </ul>
+</nav>

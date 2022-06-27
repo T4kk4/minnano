@@ -1,0 +1,23 @@
+<% num = 1 %>
+<div class="table_content">
+  <h2>目次</h2>
+  <ul>
+    <% article.article_contents.each do |tc| %>
+      <% if tc.content_type == 'heading_level1' %>
+        <li class="table_content__heading_level1">
+          <a href="#<%=tc.body %>">
+            <span class="table_content__num"><%=num %></span><%= tc.body %>
+          </a>
+        </li>
+        <% num += 1 %>
+      <% end %>
+      <% if tc.content_type == 'heading_level2' %>
+<!--        <li class="table_content__heading_level2">-->
+<!--          <a href="#<%#=tc.body %>">-->
+            <%#= tc.body %>
+<!--          </a>-->
+<!--        </li>-->
+      <% end %>
+    <% end %>
+  </ul>
+</div>

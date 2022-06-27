@@ -1,0 +1,143 @@
+@charset "utf-8";
+/*------------------------------------------------------------
+	デフォルトスタイル
+------------------------------------------------------------*/
+* {
+	margin: 0;
+	padding: 0;
+	background: transparent;
+	border: 0;
+	outline: 0;
+	font-size: 1em;	
+	box-sizing: border-box;
+}
+html {
+	font-size: 62.5%;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+:focus {
+	outline: 0;
+}
+img {
+	vertical-align: top;
+	max-width: 100%;
+}
+a, a:link {
+	color: #151515;
+	text-decoration: none;
+}
+a:visited {
+	color: #151515;
+}
+a:hover {
+	color: #151515;
+}
+a:active {
+	color: #151515;
+}
+/*------------------------------------------------------------
+	レイアウト
+------------------------------------------------------------*/
+body {
+	min-width: 1100px;
+	color: #151515;
+	font-size: 1.4rem;
+	font-family: fot-tsukubrdgothic-std, sans-serif;
+	font-weight: 700;
+	line-height: 1.5;
+	text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	background-color: #FFF;
+}
+#container {
+	text-align: left;
+}
+#main {
+}
+
+@media all and (max-width: 767px) {
+	body {
+		min-width: inherit;
+		font-size: 1.4rem;
+	}
+}
+a[href^="tel:"] {
+	cursor: default;
+	pointer-events: none;
+}
+
+@media all and (min-width: 768px) {
+	.sp {
+		display: none !important;
+	}
+}
+
+@media all and (max-width: 767px) {
+	a:hover,  a:hover img {
+		opacity: 1 !important;
+	}
+	.pc {
+		display: none !important;
+	}
+	a[href^="tel:"] {
+		cursor: pointer;
+		pointer-events: auto;
+	}
+}
+/*------------------------------------------------------------
+	ヘッダー
+------------------------------------------------------------*/
+#gHeader {
+	position: relative;
+	z-index: 10;
+}
+#gHeader h1 {
+	position: absolute;
+	left: 70px;
+	top: 30px;
+	width: 117px;
+}
+
+@media all and (max-width: 767px) {
+	#gHeader h1 {
+		left: 20px;
+		top: 18px;
+		width: 88px;
+	}
+}
+
+/*------------------------------------------------------------
+	フッター
+------------------------------------------------------------*/
+#gFooter {
+	padding: 31px 70px;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	color: #FFF;
+	background-color: #123461;
+}
+#gFooter .logo {
+	width: 111px;
+}
+#gFooter .copyright {
+	font-size: 1.5rem;
+	line-height: 1.1;
+}
+@media all and (max-width: 767px) {
+	#gFooter {
+		padding: 26px 20px;
+	}
+	#gFooter .logo {
+		width: 80px;
+	}
+	#gFooter .copyright {
+		font-size: 0.8rem;
+	}
+}
+

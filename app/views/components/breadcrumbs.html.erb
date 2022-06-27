@@ -1,0 +1,18 @@
+<% breadcrumb_size = 0 %>
+<% breadcrumbs(autoroot: true, semantic: true).tap do  |links| %>
+  <% if links.any? %>
+    <nav class="breadcrumb" aria-label="breadcrumbs">
+      <ul class="my-breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+        <% links.each do |link| %>
+          <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement" class="<%=link.current? ? "is-active" : nil %>">
+            <%= link_to link.url, itemprop: "item" do %>
+              <span itemprop="name"><%=link.text %></span>
+            <% end %>
+            <% breadcrumb_size += 1 %>
+            <meta itemprop="position" content="<%=breadcrumb_size %>" />
+          </li>
+        <% end %>
+      </ul>
+    </nav>
+  <% end %>
+<% end %>

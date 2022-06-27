@@ -1,0 +1,51 @@
+<% breadcrumb :contacts %>
+<div class="p-contact">
+  <h1 class="c-title">
+    お問い合わせ
+  </h1>
+  <p class="p-contact__txt">
+    下記のフォームに必要事項をご入力ください。
+    後日、ご入力いただいたメールアドレス宛に連絡いたします。
+  </p>
+  <%= form_for(@contact, url: contact_preview_path) do |f| %>
+      <span class="p-contact__form-title">
+        個人 / 法人
+      </span>
+    <label class="p-contact__form-radio">
+      <%= f.radio_button :user_type, '0', {checked: true} %>法人
+    </label>
+    <label class="p-contact__form-radio">
+      <%= f.radio_button :user_type, '1' %>個人事業主・フリーランス
+    </label>
+    <label class="p-contact__form-radio">
+      <%= f.radio_button :user_type, '2' %>その他個人
+    </label>
+    <label>
+      <span class="p-contact__form-title">氏名</span>
+      <%= f.text_field :user_name, class: 'p-contact__form-txt', placeholder: '苗字 名前', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">電話番号</span>
+      <%= f.text_field :phone_number, class: 'p-contact__form-txt', placeholder: '08012345678', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">メールアドレス</span>
+      <%= f.text_field :mail_address, class: 'p-contact__form-txt', placeholder: 'sample@example.com', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">都道府県</span>
+      <%= f.text_field :prefecture, class: 'p-contact__form-txt', placeholder: '東京都' %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">市区町村</span>
+      <%= f.text_field :city, class: 'p-contact__form-txt', placeholder: '渋谷区' %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">具体的な内容</span>
+      <%= f.text_area :body, required: true %>
+    </label>
+    <p class="p-contact__btn">
+      <button type="submit" class="c-btn-cta">内容を確認する</button>
+    </p>
+  <% end %>
+</div>

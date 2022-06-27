@@ -1,0 +1,40 @@
+.table_content {
+  background-color: #F1F8FA;
+  padding: 12px 32px;
+  margin: 32px 0;
+
+  h2 {
+    color: $main-color;
+    border-bottom: #D1E6EE 2px solid;
+    font-size: 2rem;
+    padding-left: 16px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 16px;
+    font-size: 1.4rem;
+
+    li {
+      margin-top: 4px;
+      border-bottom: 4px;
+
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+    }
+  }
+
+  &__num {
+    margin-right: 8px;
+  }
+
+  &__heading_level1 {
+    margin-left: .5em;
+  }
+
+  &__heading_level2 {
+    margin-left: 4rem;
+  }
+}

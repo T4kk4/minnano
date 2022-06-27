@@ -1,0 +1,18 @@
+<div class="p-thanks">
+  <div class="p-thanks__inner">
+    <p class="p-thanks__chara">
+      <%= image_tag 'chara.png', alt: 'chara'%>
+    </p>
+    <div class="p-thanks__contents">
+      <p class="p-thanks__title">お問い合わせありがとうございます</p>
+      <p class="p-thanks__body">記入いただいた情報は無事送信されました<br />担当者より3営業日以内に連絡させていただきます</p>
+      <p class="p-thanks__logo"><%= image_tag 'logo.png', alt: 'logo'%></p>
+    </div>
+  </div>
+  <a href="/" class="p-thanks__top">TOPへ戻る</a>
+</div>
+<script>
+  setTimeout(function () {
+      window.location.href = '/';
+  }, 3000);
+</script>

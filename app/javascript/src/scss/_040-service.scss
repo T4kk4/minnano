@@ -1,0 +1,165 @@
+.p-service{
+  max-width:1024px; 
+  margin: 32px auto 64px;
+  @media screen and (max-width: 896px) {
+    margin: 24px 16px 48px 16px;
+  }
+  &__list{
+    padding: 0;
+  }
+  &__item{
+    list-style: none;
+    border: solid 2px $border-color;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    padding: 16px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+
+    &-title{
+      display: inline;
+      background: -webkit-gradient(linear,left top, left bottom,color-stop(70%, transparent),color-stop(50%, #FFEF96));
+      background: linear-gradient(transparent 70%,#FFEF96 50%);
+      font-size: 1.8rem;
+    }
+    &-txt{
+      font-size: 1.6rem;
+    }
+  }
+  &__job-list{
+    padding: 0;
+    display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      -webkit-box-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+      @media screen and (max-width: 480px) {
+        margin-bottom: 0;
+      }
+  }
+  &__job-item{
+    list-style: none;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: inline-block;
+    width: 30%;
+    height: 64px;
+    vertical-align: top;
+    text-align: center;
+    border-radius: 4px;
+    margin: 0 8px 24px 8px;
+    a{
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;   
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+      width: 100%;
+      height: 100%;
+      text-decoration: none;
+      font-size: 1.2rem;
+      border: solid 2px #bad9e6;
+      color: #00306c;
+      border-radius: 4px;
+      &:visited{
+        color: $main-color;
+      }
+      @media screen and (max-width: 480px) {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-flow: column;
+                flex-flow: column;
+              }
+    }
+    @media screen and (max-width: 480px) {
+      width: 80px;
+      height: 80px;
+    }
+  }
+  &__job-img{
+      display: block;
+      margin-right: 16px;
+      width: 40px;
+      height: 40px;
+      @media screen and (max-width: 480px) {
+        margin: 0 auto;
+        width: 24px;
+        height: 24px;
+      }
+      &-1{
+        background: url("../images/job-icon01.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-2{
+        background: url("../images/job-icon02.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-3{
+        background: url("../images/job-icon03.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-4{
+        background: url("../images/job-icon04.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-5{
+        background: url("../images/job-icon05.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-6{
+        background: url("../images/job-icon06.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-7{
+        background: url("../images/job-icon07.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-8{
+        background: url("../images/job-icon08.svg");
+        background-size: cover;
+        background-position: center;
+      }
+      &-9{
+        background: url("../images/job-icon09.svg");
+        background-size: cover;
+        background-position: center;
+      }
+    }
+    &__cta-txt{
+      text-align: center;
+      font-size: 1.6rem;
+    }
+    &__btn{
+      text-align: center;
+      a{
+        width: 220px;
+      height: 54px;
+      border-radius: 4px;
+      text-align: center;
+      padding-top:14px;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.3);
+              box-shadow: 0 3px 6px rgba(0,0,0,.3);
+      }
+    }
+  }
+

@@ -1,0 +1,39 @@
+<% breadcrumb :entry %>
+<div class="p-contact">
+  <h1 class="c-title">
+    パートナー登録申請
+  </h1>
+  <p class="p-contact__txt">
+    下記のフォームに必要事項をご入力ください。
+    後日、ご入力いただいたメールアドレス宛に連絡いたします。
+  </p>
+  <%= form_for(@entry, url: entry_preview_path) do |f| %>
+    <label>
+      <span class="p-contact__form-title">税理士登録番号</span>
+      <%= f.text_field :tax_account_number, class: 'p-contact__form-txt', placeholder: '123456', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">姓名</span>
+      <%= f.text_field :user_name, class: 'p-contact__form-txt', placeholder: '苗字 名前', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">事務所名</span>
+      <%= f.text_field :office_name, class: 'p-contact__form-txt', placeholder: '税理士法人〇〇', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">事務所所在地</span>
+      <%= f.text_field :location, class: 'p-contact__form-txt', placeholder: '東京都渋谷区〇〇', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">電話番号</span>
+      <%= f.text_field :phone_number, class: 'p-contact__form-txt', placeholder: '08012345678', required: true %>
+    </label>
+    <label>
+      <span class="p-contact__form-title">メールアドレス</span>
+      <%= f.text_field :mail_address, class: 'p-contact__form-txt', placeholder: 'sample@example.com', required: true %>
+    </label>
+    <p class="p-contact__btn">
+      <button type="submit" class="c-btn-cta">内容を確認する</button>
+    </p>
+  <% end %>
+</div>

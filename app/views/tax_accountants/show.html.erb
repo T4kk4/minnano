@@ -1,0 +1,303 @@
+<% gmap_location = @tax_accountant.google_map_location.present? ? @tax_accountant.google_map_location : @tax_accountant.location %>
+<% gmap_location_url = @tax_accountant.google_map_link.present? ? @tax_accountant.google_map_link : URI.encode("https://www.google.co.jp/maps/search/#{gmap_location}") %>
+<% provide(:head) do %>
+  <% if @tax_accountant.priority < 10000 %>
+    <meta name="robots" content="noindex">
+  <% end %>
+<% end %>
+<%# breadcrumb :tac_accountant, @tax_accountant %>
+<% breadcrumb_size = 0 %>
+<nav class="breadcrumb" aria-label="breadcrumbs">
+  <ul class="my-breadcrumbs" itemscope itemtype="http://schema.org/BreadcrumbList">
+    <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <%= link_to root_url, itemprop: "item" do %>
+        <span itemprop="name">みんなの税理士相談所</span>
+      <% end %>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    </li>
+    <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <%= link_to search_url, itemprop: "item" do %>
+        <span itemprop="name">検索結果一覧</span>
+      <% end %>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    </li>
+    <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <%= link_to search_url(prefecture: @tax_accountant.city.prefecture), itemprop: "item" do %>
+        <span itemprop="name"><%=@tax_accountant.city.prefecture %></span>
+      <% end %>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    </li>
+    <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement">
+      <%= link_to search_url(prefecture:  @tax_accountant.city.prefecture, city: @tax_accountant.city.city), itemprop: "item" do %>
+        <span itemprop="name"><%=@tax_accountant.city.city %></span>
+      <% end %>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    </li>
+    <li itemscope itemtype="http://schema.org/ListItem" itemprop="itemListElement" class="is-active">
+      <%= link_to tax_accountant_url(@tax_accountant), itemprop: "item" do %>
+        <span itemprop="name"><%=@tax_accountant.office_name %></span>
+      <% end %>
+      <% breadcrumb_size += 1 %>
+      <meta itemprop="position" content="<%=breadcrumb_size %>" />
+    </li>
+  </ul>
+</nav>
+<div class="p-detail">
+  <div class="p-detail-left">
+    <div class="p-detail__head">
+      <h2 class="c-title">
+        <%= @tax_accountant.office_name %>
+      </h2>
+      <div class="p-detail__item">
+        <% img_url = @tax_accountant.image_url.present? ? @tax_accountant.image_url : 'noimage.png' %>
+        <%= image_tag img_url, alt: 'logo', size: '180x180', style: 'object-fit: contain;' %>
+        <table class="p-detail__profile">
+          <% if @tax_accountant.location.present? %>
+            <tr>
+              <th>所在地</th>
+              <td><%= @tax_accountant.location %>
+                <a href="<%= gmap_location_url %>" target="_blank" class="p-detail__map-link">
+                  地図はこちら
+                </a>
+              </td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.access.present? %>
+            <tr>
+              <th>アクセス</th>
+              <td><%= @tax_accountant.access %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.specialty_field.present? %>
+            <tr>
+              <th>得意分野</th>
+              <td><%= @tax_accountant.specialty_field&.join(', ') %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.specialty_industry.present? %>
+            <tr>
+              <th>得意業種</th>
+              <td><%= @tax_accountant.specialty_industry&.join(', ') %></td>
+            </tr>
+          <% end %>
+        </table>
+      </div>
+      <% if @tax_accountant.profile.present? %>
+        <p class="p-detail__txt">
+          <%= @tax_accountant.profile %>
+        </p>
+        <% if @tax_accountant.contact? %>
+          <p class="p-detail__btn">
+            <a href="" class="c-btn-cta">
+              この事務所に相談する
+            </a>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    <% if @tax_accountant.contents.present? %>
+      <div class="p-detail__head">
+        <h2 class="c-title">
+          税理士事務所紹介
+        </h2>
+        <div>
+          <%= @markdown.render(@tax_accountant.contents).html_safe %>
+        </div>
+        <% if @tax_accountant.contact? %>
+          <p class="p-detail__btn">
+            <a href="" class="c-btn-cta">
+              この事務所に相談する
+            </a>
+          </p>
+        <% end %>
+      </div>
+    <% end %>
+    <% if @tax_accountant.fee_contents.present? %>
+      <div class="p-detail__head">
+        <h2 class="c-title">
+          料金体系
+        </h2>
+        <div>
+          <%= @markdown.render(@tax_accountant.fee_contents).html_safe %>
+        </div>
+      </div>
+    <% end %>
+    <% if @tax_accountant.case_contents.present? %>
+      <div class="p-detail__head">
+        <h2 class="c-title">
+          事例
+        </h2>
+        <div>
+          <%= @markdown.render(@tax_accountant.case_contents).html_safe %>
+        </div>
+      </div>
+    <% end %>
+    <div class="p-detail__head">
+      <%# if @tax_accountant.detailed? %>
+        <h2 class="c-title">
+          代表紹介
+        </h2>
+        <table class="p-detail__table">
+          <% if @tax_accountant.representative_name.present? %>
+            <tr>
+              <th>税理士名</th>
+              <td><%= @tax_accountant.representative_name %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.educational_background.present? %>
+            <tr>
+              <th>学歴</th>
+              <td>
+                <%=@tax_accountant.educational_background %>
+              </td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.license.present? %>
+            <tr>
+              <th>資格</th>
+              <td><%= @tax_accountant.license&.join(',') %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.belongs_council.present? %>
+            <tr>
+              <th>所属税理士会</th>
+              <td><%= @tax_accountant.belongs_council %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.registration_year.present? %>
+            <tr>
+              <th>税理士登録年</th>
+              <td><%= @tax_accountant.registration_year %></td>
+            </tr>
+          <% end %>
+        </table>
+      <%# else %>
+        <h2 class="c-title">
+          所属税理士紹介
+        </h2>
+        <table class="p-detail__table">
+          <% if @tax_accountant.belongs_name.present? %>
+            <tr>
+              <th>税理士名</th>
+              <td><%= @tax_accountant.belongs_name %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.achievement.present? %>
+            <tr>
+              <th>実績</th>
+              <td><%= @tax_accountant.achievement %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.specialty_field.present? %>
+            <tr>
+              <th>得意分野</th>
+              <td><%= @tax_accountant.specialty_field&.join(',') %></td>
+            </tr>
+          <% end %>
+          <% if @tax_accountant.career.present? %>
+            <tr>
+              <th>経歴</th>
+              <td>
+                <%= @markdown.render(@tax_accountant.career.gsub(/\R/, "<br />")).html_safe %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      <%# end %>
+    </div>
+    <div class="p-detail__head">
+      <h2 class="c-title">
+        事務所詳細プロフィール
+      </h2>
+      <table class="p-detail__table">
+        <% if @tax_accountant.office_name.present? %>
+          <tr>
+            <th>事務所名</th>
+            <td><%= @tax_accountant.office_name %></td>
+          </tr>
+        <% end %>
+        <% if @tax_accountant.location.present? %>
+          <tr>
+            <th>所在地</th>
+            <td>
+              <%= @tax_accountant.location %>
+              <a href="<%=gmap_location_url %>" target="_blank" class="p-detail__map-link">
+                地図はこちら
+              </a>
+            </td>
+          </tr>
+        <% end %>
+        <% if @tax_accountant.access.present? %>
+          <tr>
+            <th>アクセス</th>
+            <td><%= @tax_accountant.access %></td>
+          </tr>
+        <% end %>
+        <% if @tax_accountant.belongs_number.present? %>
+          <tr>
+            <th>所属税理士数</th>
+            <td><%= @tax_accountant.belongs_number %></td>
+          </tr>
+        <% end %>
+        <% if @tax_accountant.specialty_field.present? %>
+          <tr>
+            <th>得意分野</th>
+            <td><%= @tax_accountant.specialty_field&.join(', ') %></td>
+          </tr>
+        <% end %>
+        <% if @tax_accountant.specialty_industry.present? %>
+          <tr>
+            <th>得意業種</th>
+            <td><%= @tax_accountant.specialty_industry&.join(', ') %></td>
+          </tr>
+        <% end %>
+        <% if @tax_accountant.handling_software.present? %>
+          <tr>
+            <th>取り扱い<br>会計ソフト</th>
+            <td><%= @tax_accountant.handling_software.join(', ') %></td>
+          </tr>
+        <% end %>
+      </table>
+      <% if @tax_accountant.contact? %>
+        <p class="p-detail__btn">
+          <a href="" class="c-btn-cta">
+            この事務所に相談する
+          </a>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <div class="p-detail-right">
+    <div class="p-top__head">
+      <h2 class="c-title">
+        新着記事
+      </h2>
+      <ul class="p-top__article-list">
+        <% @new_articles.each do |article| %>
+          <li class="p-top__article-item">
+            <% if article.thumbnail_url.present? %>
+                <span class="p-top__article-img">
+                  <%= image_tag article.thumbnail_url %>
+                </span>
+            <% else %>
+                <span class="p-top__article-img">
+                  <%= image_tag 'noimage.png' %>
+                </span>
+            <% end %>
+            <%= link_to article_path(article) do %>
+              <%= article.title %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+      <p class="c-link">
+        <%= link_to 'もっと見る', articles_path %>
+      </p>
+    </div>
+  </div>
+</div>
+

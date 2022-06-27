@@ -1,0 +1,25 @@
+<% if topic_article.length > 0 %>
+  <div class="p-top__head">
+    <h2 class="c-title">
+      確定申告に関する記事
+    </h2>
+    <ul class="p-top__article-list">
+      <% topic_article.each do |article| %>
+        <li class="p-top__article-item">
+          <% if article.thumbnail_url.present? %>
+                  <span class="p-top__article-img">
+                    <%= image_tag article.thumbnail_url %>
+                  </span>
+          <% else %>
+                  <span class="p-top__article-img">
+                    <%= image_tag 'noimage.png' %>
+                  </span>
+          <% end %>
+          <%= link_to topic_article_path(t_id: "t_#{article.topic_id}", id: article.id) do %>
+            <%= article.title %>
+          <% end %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

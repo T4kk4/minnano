@@ -1,0 +1,47 @@
+<% provide(:head) do %>
+  <meta name="robots" content="noindex">
+<% end %>
+<% breadcrumb :articles %>
+<div class="p-article-list">
+  <h1 class="c-title">
+    記事一覧
+  </h1>
+  <ul class="p-article-list__list">
+    <% @articles.each_with_index do |article, index| %>
+      <li class="p-article-list__item">
+        <% if article.thumbnail_url.present? %>
+          <span class="p-article-list__img">
+            <%= image_tag article.thumbnail_url %>
+          </span>
+        <% else %>
+          <span class="p-article-list__img">
+            <%= image_tag 'noimage.png' %>
+          </span>
+        <% end %>
+        <% if article.is_a?(Article) %>
+          <%= link_to article_path(article) do %>
+            <h3 class="p-article-list__title"><%= article.title %></h3>
+            <%=article.meta_description %>
+          <% end %>
+        <% else %>
+          <%= link_to topic_article_path(t_id: "t_#{article.topic_id}", id: article.id) do %>
+            <h3 class="p-article-list__title"><%= article.title %></h3>
+            <%=article.meta_description %>
+          <% end %>
+        <% end %>
+      </li>
+      <% if false # if (index + 1) % 5 == 0 %>
+        <li>
+          <p class="p-article-list__btn">
+            <%= link_to contacts_path, class: 'c-btn-cta' do %>
+              税理士紹介を依頼する
+            <% end %>
+          </p>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+  <div class="p-result-list__page">
+    <%= paginate @articles, window: 2 %>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<h2>記事のCSVインポート</h2>
+<%= form_tag(
+        manager_article_import_create_path,
+        method: :post,
+        multipart: true,
+        class: 'formtastic item_attribute',
+    ) do %>
+  <div class="my-admin-actions">
+    <label>CSVファイルを選択してください</label>
+  </div>
+  <div class="my-admin-actions mt-2">
+    <%= file_field_tag 'csv_file', required: true, accept: '.csv' %>
+  </div>
+  <fieldset class="actions mt-4">
+    <ol class="my-admin-actions">
+      <li class="file input optional numeric stringish my-admin-input-field">
+        <%= submit_tag 'インポート' %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>

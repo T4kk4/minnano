@@ -1,0 +1,2 @@
+<% markdown = Redcarpet::Markdown.new(ParagraphRender) %>
+<%=markdown.render(content.gsub(/\R/, '<br/>')).html_safe %>

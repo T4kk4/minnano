@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <title><%= yield(:title) %>みんなの税理士相談所</title>
+    <meta charset="utf-8">
+    <%= yield(:head) if content_for?(:head) %>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148509806-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-148509806-2');
+    </script>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P3NK6DH');</script>
+    <!-- End Google Tag Manager -->
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <% if Rails.env == 'development' %>
+      <%= stylesheet_pack_tag 'application' %>
+      <%= javascript_pack_tag 'application' %>
+    <% end %>
+    <style>
+      <%= insert_erb("public#{asset_pack_path 'application.css'}") %>
+    </style>
+  </head>
+
+  <body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P3NK6DH"
+                    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+  <header>
+    <div class="p-header">
+      <% if flash[:notice] %>
+        <p class="p-header__flash"><%= flash[:notice] %></p>
+      <% end %>
+      <div class="p-header__tax-account">
+        <p class="p-header__tax-account-link">
+          <%= link_to entry_lp_path do %>
+            税理士の方はこちら
+          <% end %>
+        </p>
+      </div>
+      <div class="p-header__content">
+        <%= link_to root_path do %>
+          <%= image_tag 'logo.png', alt: 'logo', size: '136x58' %>
+        <% end %>
+        <div class="p-header__right">
+          <div class="p-header__phone">
+            <p class="p-header__phone--top"><i class="fas fa-phone-alt fa-fw"></i>0120-973-309</p>
+            <p>受付時間：10:00 ~ 19:00</p>
+          </div>
+          <p class="p-top__btn">
+            <%= link_to contacts_path, class: 'c-btn-cta' do %>
+              税理士紹介を依頼する
+            <% end %>
+          </p>
+        </div>
+      </div>
+    </div>
+  </header>
+  <div style="margin-top: 132px;">
+    <%= render(template: '/components/breadcrumbs') %>
+    <%= yield %>
+    <%= render(template: '/components/breadcrumbs') %>
+  </div>
+  <footer>
+    <div class="p-footer">
+      <p class="p-footer__logo">
+        <%= image_tag 'logo-w.png', alt: 'logo', size: '136x58' %>
+      </p>
+      <ul class="p-footer__list">
+        <li class="p-footer__item p-footer__item--top">
+          <%= link_to contacts_path do %>
+            お問い合わせ
+          <% end %>
+        </li>
+        <li class="p-footer__item p-footer__item--top">
+          <%= link_to terms_path do %>
+            利用規約
+          <% end %>
+        </li>
+        <li class="p-footer__item p-footer__item--top">
+          <%= link_to privacy_path do %>
+            個人情報の取り扱いについて
+          <% end %>
+        </li>
+        <li class="p-footer__item p-footer__item--top">
+          <a href="https://blueleaf-partners.co.jp/company/" target="_blank">
+            会社概要
+          </a>
+        </li>
+      </ul>
+      <ul class="p-footer__list">
+        <li class="p-footer__item"><p>都道府県</p></li>
+      </ul>
+      <ul class="p-footer__list">
+        <li class="p-footer__item">
+          <a href="/search">全国</a>
+        </li>
+      </ul>
+      <ul class="p-footer__list">
+        <li class="p-footer__item"><a href="/search?area=北海道">北海道</a></li>
+        <li class="p-footer__item"><a href="/search?area=東北地方">東北地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=東京都">東京都</a></li>
+        <li class="p-footer__item"><a href="/search?area=関東地方">関東地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=北陸地方">北陸地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=東海地方">東海地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=甲信越地方">甲信越地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=関西地方">関西地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=中国地方">中国地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=四国地方">四国地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=九州地方">九州地方</a></li>
+        <li class="p-footer__item"><a href="/search?area=沖縄">沖縄</a></li>
+      </ul>
+      <ul class="p-footer__list">
+        <li class="p-footer__item"><p>相談内容</p></li>
+      </ul>
+      <ul class="p-footer__list">
+        <li class="p-footer__item">
+          <%= link_to t1_path do %>
+            事業承継・M&A
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t2_path do %>
+            顧問税理士
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t3_path do %>
+            確定申告
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t4_path do %>
+            会社設立
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t5_path do %>
+            資金調達
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t6_path do %>
+            経営コンサル
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t7_path do %>
+            経理・決算
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t8_path do %>
+            税務調査
+          <% end %>
+        </li>
+        <li class="p-footer__item">
+          <%= link_to t9_path do %>
+            人事労務
+          <% end %>
+        </li>
+      </ul>
+      <p class="p-footer__copy">
+        <small>Copyright © みんなの税理士相談所</small>
+      </p>
+    </div>
+  </footer>
+  <div class="c-fixed-button">
+    <a href="tel:0120-973-309" class="c-fixed-button__item c-fixed-button__item--call">
+      <p>電話で無料相談</p>
+      <p><i class="fas fa-phone-alt fa-fw"></i>0120-973-309</p>
+    </a>
+    <%= link_to contacts_path, class: 'c-fixed-button__item c-btn-cta' do %>
+      税理士紹介を依頼する
+    <% end %>
+  </div>
+  <script type="text/javascript">
+    window._pt_lt = new Date().getTime();
+    window._pt_sp_2 = [];
+    _pt_sp_2.push("setAccount,224725a4");
+    var _protocol =(("https:" == document.location.protocol) ? " https://" : " http://");
+    (function() {
+      var atag = document.createElement("script");
+      atag.type = "text/javascript";
+      atag.async = true;
+      atag.src = _protocol + "js.ptengine.jp/224725a4.js";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(atag, s);
+    })();
+  </script>
+  </body>
+</html>

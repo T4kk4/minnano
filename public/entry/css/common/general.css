@@ -1,0 +1,94 @@
+@charset "utf-8";
+/*------------------------------------------------------------
+	汎用スタイル
+------------------------------------------------------------*/
+* html .clearfix {
+	zoom: 1;
+}
+*+html .clearfix {
+	zoom: 1;
+}
+.clearfix:after {
+	height: 0;
+	visibility: hidden;
+	content: ".";
+	display: block;
+	clear: both;
+}
+/*------------------------------------------------------------
+	common
+------------------------------------------------------------*/
+.fontA {
+	font-family: fot-tsukuardgothic-std, sans-serif;
+}
+.comBox {
+	margin: 0 auto;
+	position: relative;
+	width: 1080px;
+}
+.headLine01 {
+	position: relative;
+	font-weight: 500;
+	font-size: 3.5rem;
+	line-height: 1.75;
+	color: #123461;
+	text-align: center;
+}
+.headLine01:before {
+	position: absolute;
+	top: -65px;
+	left: calc(50% - 16px);
+	width: 33px;
+	height: 33px;
+	background: #123461;
+	border-radius: 50%;
+	content: "";
+}
+.headLine01 span {
+	display: block;
+	line-height: 1;
+}
+.comBtn a {
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 617px;
+	height: 109px;
+	border-radius: 54.5px;
+	background: #f97b2a;
+	box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+	font-size: 45px;
+	color: #fff;
+	text-align: center;
+}
+@media all and (-ms-high-contrast:none) {
+	.comBtn a {
+		padding-top: 17px;
+	}
+}
+@media all and (max-width: 767px) {
+	.comBox {
+		margin: 0 20px;
+		width: auto;
+	}
+	.headLine01 {
+		font-size: 2rem;
+		line-height: 1.4;
+	}
+	.headLine01 span img {
+		height: 9px;
+		width: auto;
+	}
+	.headLine01:before {
+		top: -37px;
+		left: calc(50% - 9px);
+		width: 18px;
+		height: 18px;
+	}
+	.comBtn a {
+		width: 300px;
+		height: 53px;
+		font-size: 2.2rem;
+	}
+}

@@ -1,0 +1,12 @@
+<% filter = ['紀尾井観光ビル3F'] %>
+<% tax_accountant = TaxAccountant.find_by_id(content) %>
+<% if tax_accountant.present? %>
+  <% if tax_accountant.location.present? %>
+    <% gmap_location = tax_accountant.google_map_location.present? ? tax_accountant.google_map_location : tax_accountant.location %>
+    <% if tax_accountant.google_map_iframe.present? %>
+      <%= tax_accountant.google_map_iframe.html_safe  %>
+    <% else %>
+      <iframe loading="lazy" style="width: 100%;" src="https://maps.google.co.jp/maps?q=<%=gmap_location.gsub(filter[0], '') %>&output=embed&t=m&z=16&hl=ja" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" height="450"></iframe>
+    <% end %>
+  <% end %>
+<% end %>

@@ -1,0 +1,70 @@
+.p-jobs{
+  &__main-view{
+    width: 100%;
+    height: 300px;
+    @media screen and (max-width: 480px) {
+      height: 180px;
+    }
+    &-1{
+      background: url("../images/jobs-1.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-2{
+      background: url("../images/jobs-2.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-3{
+      background: url("../images/jobs-3.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-4{
+      background: url("../images/jobs-4.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-5{
+      background: url("../images/jobs-5.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-6{
+      background: url("../images/jobs-6.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-7{
+      background: url("../images/jobs-7.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-8{
+      background: url("../images/jobs-8.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+    &-9{
+      background: url("../images/jobs-9.jpg");
+      background-position: center;
+    background-size: cover;
+    }
+  }
+  &__content{
+    max-width:1024px;
+    margin: 32px auto 64px;
+    @media screen and (max-width: 480px) {
+      margin: 24px 24px 32px 24px;
+    }
+  }
+  &__head{
+    margin-bottom:32px; 
+  }
+  &__txt{
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    margin: 0 12px;
+  }
+}

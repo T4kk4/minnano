@@ -1,0 +1,112 @@
+.p-thanks{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow-y: hidden;
+  color: $main-color;
+  padding: 0 32px;
+
+  @media screen and (max-width: 700px) {
+    padding: 0 8px;
+  }
+
+  &__top {
+    margin-top: 16px;
+    color: $main-color;
+  }
+
+  &__inner {
+    width: 823px;
+    max-width: 100%;
+    height: 402px;
+    margin: 0 auto;
+    border: 3px solid $main-color;
+    border-radius: 10px;
+    opacity: 1;
+    background: transparent url("../images/chara_bg.png") 0 0 repeat padding-box;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    position: relative;
+
+    @media screen and (max-width: 700px) {
+      width: 100%;
+      height: 165px;
+    }
+  }
+
+  &__chara {
+    position: absolute;
+    top: 48px;
+    left: 0;
+    z-index: 100;
+
+    @media screen and (max-width: 700px) {
+      top: 6px;
+    }
+    img {
+      width: 315px;
+      height: 345px;
+
+      @media screen and (max-width: 700px) {
+        width: 137px;
+        height: 150px;
+      }
+    }
+  }
+
+  &__contents {
+    background-color: #FFFFFF;
+    width: 534px;
+    height: 218px;
+    margin-right: 32px;
+    text-align: center;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    position: relative;
+
+    @media screen and (max-width: 700px) {
+      width: 60%;
+      height: 165px;
+      margin-right: 8px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin: 8px 0;
+    @media screen and (max-width: 700px) {
+      font-size: 11px;
+    }
+  }
+
+  &__body {
+    font-size: 16px;
+    margin: 8px 0;
+    @media screen and (max-width: 700px) {
+      font-size: 10px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+
+    img {
+      width: 91px;
+      height: 39px;
+
+      @media screen and (max-width: 700px) {
+        width: 52px;
+        height: 22px;
+      }
+    }
+  }
+}

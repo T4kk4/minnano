@@ -1,0 +1,29 @@
+{
+  "name": "app",
+  "private": true,
+  "scripts": {
+    "prettier": "prettier --write ./app/javascript/src/{ts,scss}/**/*.{ts,tsx,scss}"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.10.4",
+    "@babel/preset-typescript": "^7.10.4",
+    "@rails/webpacker": "5.1.1",
+    "@types/react": "^16.9.45",
+    "@types/react-dom": "^16.9.8",
+    "axios": "^0.18.0",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
+    "babel-preset-react": "^6.24.1",
+    "cssnext": "^1.8.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react_ujs": "^2.4.4",
+    "ts-loader": "3.5.0",
+    "typescript": "^3.9.7"
+  },
+  "devDependencies": {
+    "prettier": "1.15.3",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  }
+}

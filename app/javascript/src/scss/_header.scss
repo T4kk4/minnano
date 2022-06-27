@@ -1,0 +1,94 @@
+.p-header{
+  @media screen and (max-width: $pc-width) {
+    box-shadow: 0 3px 6px rgba(0,0,0,.1);
+  }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1000;
+
+  background-color: #fff;
+
+  &__tax-account {
+    background-color: #EAEEF2;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    &-link {
+      margin: 0 32px;
+
+      a {
+        color: #F46248;
+        text-decoration: none;
+        background-color: #fff;
+        padding: 6px 12px;
+        border: #DFE1E4 1px solid;
+      }
+    }
+  }
+
+  &__flash {
+    margin: 0;
+    padding: 16px 0;
+    font-size: 1.5rem;
+    background-color: $cta-color;
+    text-align: center;
+    color: #fff;
+  }
+  &__content{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin: 0 32px;
+    align-items: center;
+    
+    img{
+      display: inline-block;
+    }
+    @media screen and (max-width: 480px) {
+      margin: 0 12px;
+    }
+  }
+  &__right {
+    display: flex;
+    flex-flow: row nowrap;
+
+    .p-top__btn {
+      margin-bottom: 16px;
+      margin-left: 32px;
+    }
+
+    @media screen and (max-width: 480px) {
+      .p-top__btn {
+        display: none;
+      }
+    }
+  }
+  &__phone{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    margin: 16px 0;
+    color: #00306C;
+
+    p {
+      margin: 0;
+      text-align: center;
+    }
+
+    a {
+      text-decoration: none;
+      color: #00306C;
+    }
+
+    &--top {
+      font-size: 2rem;
+    }
+  }
+}

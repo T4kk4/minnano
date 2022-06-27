@@ -1,0 +1,157 @@
+html{
+  font-size: 62.5%; /* -> 10px; */
+  font-family: arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.c-title{
+  color: $main-color;
+  border-bottom: 2px solid $border-color;
+  font-size: 2.6rem;
+  @media screen and (max-width: 480px) {
+    font-size: 2.2rem;
+  }
+}
+.c-title-middle{
+  color: $main-color;
+  border-left: 4px solid $border-color;
+  font-size: 2.0rem;
+  padding-left:8px;
+  @media screen and (max-width: 480px) {
+    font-size: 1.8rem;
+  }
+}
+
+.c-title-small{
+  color: $main-color;
+  font-size: 1.8rem;
+  @media screen and (max-width: 480px) {
+    font-size: 1.6rem;
+  }
+}
+
+.c-btn-cta{
+  display: inline-block;
+  background: $cta-color;
+  text-decoration: none;
+  color: #fff;
+  border: none;
+  font-weight: bold;
+  font-size: 1.6rem;
+  &:visited{
+    color: #fff;
+  }
+}
+
+.c-btn-search{
+  display: inline-block;
+  width: 220px;
+  height: 54px;
+  background: $cta-color;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.3);
+          box-shadow: 0 3px 6px rgba(0,0,0,.3);
+  font-size: 1.6rem;
+}
+
+.c-btn-contact{
+    display: inline-block;
+    background: #fff;
+    color: $sub-color;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.6rem;
+    -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.3);
+            box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    &:visited{
+      color: $sub-color;
+    }
+}
+
+.c-link{
+  text-align: right;
+  position: relative;
+  a{
+    display: inline-block;
+    color: $main-color;
+    text-decoration: none;
+    font-size: 1.4rem;
+    padding-right: 14px;
+    &:visited{
+      color: $main-color;
+    }
+  }
+  &:after{
+    position: absolute;
+    content: "";
+    top: 30%;
+    left: 98.5%;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid $main-color;
+    border-right: 1px solid $main-color;
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+  
+}
+
+.c-fixed-button {
+  width: calc(100% - 8px);
+  display: none;
+  flex-flow: row nowrap;
+  justify-content: center;
+  border: 4px #fff solid;
+  position: fixed;
+  bottom: 0;
+  z-index: 100;
+
+   &__item {
+     width: 50%;
+     text-align: center;
+     display: flex;
+     flex-flow: column nowrap;
+     justify-content: center;
+     padding: 16px 0;
+     font-size: 1.2rem;
+     color: #fff;
+
+     &--call {
+       text-decoration: none;
+       background-color: $main-color;
+       p {
+         margin: 0;
+       }
+     }
+
+     a {
+       width: 100%;
+       text-decoration: none;
+       color: #fff;
+     }
+   }
+
+  @media screen and (max-width: 480px) {
+    display: flex;
+  }
+}
+
+.c-mobile-none {
+  @media screen and (max-width: $pc-width) {
+    display: none;
+  }
+}
+
+.c-mobile-display {
+  display: none;
+  @media screen and (max-width: $pc-width) {
+    display: block;
+  }
+}

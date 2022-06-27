@@ -1,0 +1,30 @@
+version: "3"
+services:
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgsql:/var/lib/pgsql
+  web:
+    build:
+      context: .
+      dockerfile: ./docker/rails/Dockerfile
+    command: bash -c "rm -f tmp/pids/server.pid && foreman start -f Procfile.dev"
+    env_file: .env
+    volumes:
+      - .:/app
+      - bundle:/usr/local/bundle
+    ports:
+      - "3000:3000"
+      - "3035:3035"
+    depends_on:
+      - db
+    stdin_open: true
+    tty: true
+volumes:
+  pgsql:
+  bundle:
+

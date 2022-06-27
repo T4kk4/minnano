@@ -1,0 +1,58 @@
+<% tax_accountant = TaxAccountant.find_by_id(content) %>
+<% if tax_accountant.present? %>
+<div class="p-article-detail__head">
+  <div class="p-article-detail__scroll">
+    <table border="1" width="300">
+      <tbody>
+      <% if tax_accountant.representative_name&.present? %>
+        <tr>
+          <td align="center" style="background-color: #00306C; color: #fff; border-color: #000;">代表税理士名</td>
+          <td align="center" colspan="3"><%= tax_accountant.representative_name %></td>
+        </tr>
+      <% end %>
+      <% if tax_accountant.location&.present? %>
+      <tr>
+        <td align="center" style="background-color: #00306C; color: #fff; border-color: #000;">所在地</td>
+        <td align="center" colspan="3"><%= tax_accountant.location %></td>
+      </tr>
+      <% end %>
+      <% if tax_accountant.access&.present? %>
+      <tr>
+        <td align="center" style="background-color: #00306C; color: #fff; border-color: #000;">アクセス</td>
+        <td align="center" colspan="3"><%= tax_accountant.access %></td>
+      </tr>
+      <% end %>
+      <% if tax_accountant.specialty_field && tax_accountant.specialty_field.length != 0 %>
+      <tr>
+        <td align="center" style="background-color: #00306C; color: #fff; border-color: #000;">得意分野</td>
+        <td align="center" colspan="3"><%= tax_accountant.specialty_field&.join(', ') %></td>
+      </tr>
+      <% end %>
+      <% if tax_accountant.specialty_industry && tax_accountant.specialty_industry.length != 0 %>
+      <tr>
+        <td align="center" style="background-color: #00306C; color: #fff; border-color: #000;">得意業種</td>
+        <td align="center" colspan="3"><%= tax_accountant.specialty_industry&.join(', ') %></td>
+      </tr>
+      <% end %>
+      <% if tax_accountant.handling_software && tax_accountant.handling_software.length != 0 %>
+      <tr>
+        <td align="center" style="background-color: #00306C; color: #fff; border-color: #000;">取り扱い会計ソフト</td>
+        <td align="center" colspan="3"><%= tax_accountant.handling_software&.join(', ') %></td>
+      </tr>
+      <% end %>
+      <% if tax_accountant.fee_contents&.present? %>
+        <tr>
+          <td align="center" style="background-color: #00306C; color: #fff; border-color: #000;">料金体型</td>
+          <td align="center" colspan="3"><%= tax_accountant.fee_contents %></td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+    <p class="p-top__btn" style="margin-bottom: 16px;">
+      <%= link_to tax_accountant_path(content), class: 'c-btn-cta' do %>
+        詳細を見る
+      <% end %>
+    </p>
+  </div>
+</div>
+<% end %>

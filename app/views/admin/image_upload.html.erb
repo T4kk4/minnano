@@ -1,0 +1,24 @@
+<h2>画像のアップロード</h2>
+<%= form_tag(
+        manager_image_upload_create_path,
+        method: :post,
+        multipart: true,
+        class: 'formtastic item_attribute',
+    ) do %>
+  <div class="my-admin-actions">
+    <label>画像ファイルを選択してください</label>
+  </div>
+  <div class="my-admin-actions mt-2">
+    <%= text_field_tag 'file_name', nil, required: true, placeholder: 'ファイル名' %>
+  </div>
+  <div class="my-admin-actions mt-2">
+    <%= file_field_tag 'image_file', required: true, accept: 'image/jpg,image/jpeg,image/png,image/gif' %>
+  </div>
+  <fieldset class="actions mt-4">
+    <ol class="my-admin-actions">
+      <li class="file input optional numeric stringish my-admin-input-field">
+        <%= submit_tag 'アップロード' %>
+      </li>
+    </ol>
+  </fieldset>
+<% end %>

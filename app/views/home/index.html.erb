@@ -1,0 +1,654 @@
+<% provide(:head) do %>
+  <%= javascript_pack_tag 'application', defer: true %>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script defer src="https://kit.fontawesome.com/6e719d999b.js" crossorigin="anonymous"></script>
+  <meta property="og:description" content="経験豊富な税務のプロが税理士探しを徹底サポートする「みんなの税理士相談所」今すぐ無料で地域、業種、予算などの条件に合う税理士をご紹介します。">
+<% end %>
+
+<div class="p-top">
+<!--  <ul class="p-top__nav">-->
+<!--    <li><a href="#">記事</a></li>-->
+<!--    <li><a href="#">税理士を探す</a></li>-->
+<!--    <li><a href="#">相談内容から探す</a></li>-->
+<!--    <li><a href="#">地域から探す</a></li>-->
+<!--  </ul>-->
+  <div class="p-top__main-view">
+  </div>
+  <div class="p-top__point">
+    <ul>
+      <li>
+        <p class="p-top__point-head">Point!</p>
+        <p class="p-top__point-content">今すぐ<span class="u-accent-color">無料</span>で<br />ご相談いただけます</p>
+      </li>
+      <li>
+        <p class="p-top__point-head c-mobile-none">Point!</p>
+        <p class="p-top__point-content">経験豊富な税務の<span class="u-accent-color">プロ</span>が<br />徹底サポートします</p>
+      </li>
+      <li>
+        <p class="p-top__point-head c-mobile-none">Point!</p>
+        <p class="p-top__point-content">全国の税理士を<br /><span class="u-accent-color">最短即日</span>でご紹介できます</p>
+      </li>
+    </ul>
+  </div>
+  <div class="p-top__content-sample">
+    <p class="p-top__content-sample-head c-mobile-none">
+      <%= image_tag 'logo-w.svg', alt: 'logo', width: '152' %><span>をご利用いただいた成功例</span>
+    </p>
+    <p class="p-top__content-sample-head c-mobile-display">
+      <%= image_tag 'logo-w.svg', alt: 'logo', width: '152' %><br /><span>をご利用いただいた成功例</span>
+    </p>
+    <div>
+      <div class="c-mobile-none p-top__content-sample-contents1">
+        <div><%= image_tag 'success_c01.png', alt: 'example1'%></div>
+        <div><%= image_tag 'success_c02.png', alt: 'example2'%></div>
+        <div><%= image_tag 'success_c03.png', alt: 'example3'%></div>
+      </div>
+      <div class="c-mobile-display">
+        <div class="swiper-container" id="sample-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><%= image_tag 'success_c01.png', alt: 'example1'%></div>
+            <div class="swiper-slide"><%= image_tag 'success_c02.png', alt: 'example2'%></div>
+            <div class="swiper-slide"><%= image_tag 'success_c03.png', alt: 'example3'%></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+      <script>
+          var mySwiper = new Swiper('#sample-swiper', {
+              direction: 'horizontal',
+              loop: true,
+
+              // If we need pagination
+              pagination: {
+                  el: '.swiper-pagination',
+              },
+
+              // Navigation arrows
+              navigation: {
+                  nextEl: '.swiper-button-next',
+                  prevEl: '.swiper-button-prev',
+              },
+
+              // And if we need scrollbar
+              scrollbar: {
+                  el: '.swiper-scrollbar',
+              },
+          })
+      </script>
+      <div class="p-top__content-sample-contents2">
+        <div><%= image_tag 'success_c04.png', alt: 'example4'%></div>
+        <div><%= image_tag 'success_c05.png', alt: 'example5'%></div>
+      </div>
+    </div>
+  </div>
+  <div class="p-top__content-example">
+    <p class="p-top__content-example-head c-mobile-none">
+      <%= image_tag 'logo-w.svg', alt: 'logo', width: '152' %><span>を利用されたお客様の声をご紹介します</span>
+    </p>
+    <p class="p-top__content-sample-head c-mobile-display">
+      <%= image_tag 'logo-w.svg', alt: 'logo', width: '152' %><br /><span>を利用されたお客様の声をご紹介します</span>
+    </p>
+    <div class="p-top__content-example-contents">
+      <div class="p-top__content-example-contents-item">
+        <div class="p-top__content-example-contents-item-head">
+          <div class="p-top__content-example-contents-item-head-icon"></div>
+          <p class="p-top__content-example-contents-item-head-title">
+            ◆愛知県<br />IT企業運営のお客様
+          </p>
+        </div>
+        <p class="p-top__content-example-contents-item-body">
+          変更前：担当の職員さんがコロコロ変わって、その都度引継ぎ作業をすることにストレスを感じていました。 <br />
+          変更後：みんなの税理士相談所に相談したところ、代表の税理士が必ず担当してくれる税理士事務所さんをご紹介いただき、担当の職員が変更になることはなくなりました。また、実務経験も豊富なので安心して任せられていて、大変満足しています。ご紹介いただきありがとうございました。
+        </p>
+      </div>
+      <div class="p-top__content-example-contents-item">
+        <div class="p-top__content-example-contents-item-head">
+          <div class="p-top__content-example-contents-item-head-icon"></div>
+          <p class="p-top__content-example-contents-item-head-title">
+            ◆千葉県<br />飲食店経営のお客様
+          </p>
+        </div>
+        <p class="p-top__content-example-contents-item-body">
+          変更前：メールで相談をしても返信が数日後になることがよくあり、早急に知りたいことなどが知れずやりづらさを感じていた。 <br />
+          変更後：レスポンスが早い税理士事務所さんをご紹介していただき、些細なことでも、相談をするとチャットやテレビ会議などをですぐに対応してくれ、ストレスなく本業に集中できるようになりました。
+        </p>
+      </div>
+      <div class="p-top__content-example-contents-item">
+        <div class="p-top__content-example-contents-item-head">
+          <div class="p-top__content-example-contents-item-head-icon"></div>
+          <p class="p-top__content-example-contents-item-head-title">
+            ◆大阪府<br />製造業経営のお客様
+          </p>
+        </div>
+        <p class="p-top__content-example-contents-item-body">
+          変更前：顧問税理士とは3年も付き合いがあるのにいまだに距離感を感じます。今後気軽に経営相談できる間柄にはなれない気がしていて心配です。 <br />
+          変更後：前の税理士への不満を相談したところ、年齢も近く、人柄も明るいので税理士事務所さんを紹介していただき、気軽に経営相談もできてとても助っています。
+        </p>
+      </div>
+      <div class="p-top__content-example-contents-item">
+        <div class="p-top__content-example-contents-item-head">
+          <div class="p-top__content-example-contents-item-head-icon"></div>
+          <p class="p-top__content-example-contents-item-head-title">
+            ◆神奈川県<br />フリーランスエンジニアの方
+          </p>
+        </div>
+        <p class="p-top__content-example-contents-item-body">
+          変更前：業界の仕組みや業種に対して理解のない税理士だったため、説明をしないといけないことが多くストレスを感じていました。<br />
+          変更後：経験豊富な税理士の方で、かつ自ら業界・業種のことを調べてくれて、適したアドバイスをくれる税理士事務所さんを紹介していただき、打ち合わせがスムーズに進むようになりとても感謝しています。
+        </p>
+      </div>
+      <div class="p-top__content-example-contents-item">
+        <div class="p-top__content-example-contents-item-head">
+          <div class="p-top__content-example-contents-item-head-icon"></div>
+          <p class="p-top__content-example-contents-item-head-title">
+            ◆福岡県<br />美容室経営のお客様
+          </p>
+        </div>
+        <p class="p-top__content-example-contents-item-body">
+          変更前：年末調整の書類などの大切な書類が期限ギリギリに送られてきて、時間に余裕を持って対応してくれない部分に不満を抱えていました。<br />
+          変更後：いつも期限に余裕を持って書類を送っていただくなど行動の早い税理士を紹介していただき、心の余裕ができ、安心して業務に集中することができました。
+        </p>
+      </div>
+      <div class="p-top__content-example-contents-item">
+        <div class="p-top__content-example-contents-item-head">
+          <div class="p-top__content-example-contents-item-head-icon"></div>
+          <p class="p-top__content-example-contents-item-head-title">
+            ◆東京都<br />不動産業のお客様
+          </p>
+        </div>
+        <p class="p-top__content-example-contents-item-body">
+          変更前：業務量に対しての顧問料が高すぎる気がしていました。毎月相談することも多くなく、税理士からの提案なども少なかったです。 <br />
+          変更後：年間で60万円支払っていた報酬を36万円まで下げることができました。また、融資や節税など税理士からの積極的な提案も多く、非常に満足しています。
+        </p>
+      </div>
+  </div>
+    <div class="c-mobile-display">
+      <div class="swiper-container" id="sample-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="p-top__content-example-contents-item">
+              <div class="p-top__content-example-contents-item-head">
+                <div class="p-top__content-example-contents-item-head-icon"></div>
+                <p class="p-top__content-example-contents-item-head-title">
+                  ◆愛知県<br />IT企業運営のお客様
+                </p>
+              </div>
+              <p class="p-top__content-example-contents-item-body">
+                変更前：担当の職員さんがコロコロ変わって、その都度引継ぎ作業をすることにストレスを感じていました。 <br />
+                変更後：みんなの税理士相談所に相談したところ、代表の税理士が必ず担当してくれる税理士事務所さんをご紹介いただき、担当の職員が変更になることはなくなりました。また、実務経験も豊富なので安心して任せられていて、大変満足しています。ご紹介いただきありがとうございました。
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="p-top__content-example-contents-item">
+              <div class="p-top__content-example-contents-item-head">
+                <div class="p-top__content-example-contents-item-head-icon"></div>
+                <p class="p-top__content-example-contents-item-head-title">
+                  ◆千葉県<br />飲食店経営のお客様
+                </p>
+              </div>
+              <p class="p-top__content-example-contents-item-body">
+                変更前：メールで相談をしても返信が数日後になることがよくあり、早急に知りたいことなどが知れずやりづらさを感じていた。 <br />
+                変更後：レスポンスが早い税理士事務所さんをご紹介していただき、些細なことでも、相談をするとチャットやテレビ会議などをですぐに対応してくれ、ストレスなく本業に集中できるようになりました。
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="p-top__content-example-contents-item">
+              <div class="p-top__content-example-contents-item-head">
+                <div class="p-top__content-example-contents-item-head-icon"></div>
+                <p class="p-top__content-example-contents-item-head-title">
+                  ◆大阪府<br />製造業経営のお客様
+                </p>
+              </div>
+              <p class="p-top__content-example-contents-item-body">
+                変更前：顧問税理士とは3年も付き合いがあるのにいまだに距離感を感じます。今後気軽に経営相談できる間柄にはなれない気がしていて心配です。 <br />
+                変更後：前の税理士への不満を相談したところ、年齢も近く、人柄も明るいので税理士事務所さんを紹介していただき、気軽に経営相談もできてとても助っています。
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="p-top__content-example-contents-item">
+              <div class="p-top__content-example-contents-item-head">
+                <div class="p-top__content-example-contents-item-head-icon"></div>
+                <p class="p-top__content-example-contents-item-head-title">
+                  ◆神奈川県<br />フリーランスエンジニアの方
+                </p>
+              </div>
+              <p class="p-top__content-example-contents-item-body">
+                変更前：業界の仕組みや業種に対して理解のない税理士だったため、説明をしないといけないことが多くストレスを感じていました。<br />
+                変更後：経験豊富な税理士の方で、かつ自ら業界・業種のことを調べてくれて、適したアドバイスをくれる税理士事務所さんを紹介していただき、打ち合わせがスムーズに進むようになりとても感謝しています。
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="p-top__content-example-contents-item">
+              <div class="p-top__content-example-contents-item-head">
+                <div class="p-top__content-example-contents-item-head-icon"></div>
+                <p class="p-top__content-example-contents-item-head-title">
+                  ◆福岡県<br />美容室経営のお客様
+                </p>
+              </div>
+              <p class="p-top__content-example-contents-item-body">
+                変更前：年末調整の書類などの大切な書類が期限ギリギリに送られてきて、時間に余裕を持って対応してくれない部分に不満を抱えていました。<br />
+                変更後：いつも期限に余裕を持って書類を送っていただくなど行動の早い税理士を紹介していただき、心の余裕ができ、安心して業務に集中することができました。
+              </p>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="p-top__content-example-contents-item">
+              <div class="p-top__content-example-contents-item-head">
+                <div class="p-top__content-example-contents-item-head-icon"></div>
+                <p class="p-top__content-example-contents-item-head-title">
+                  ◆東京都<br />不動産業のお客様
+                </p>
+              </div>
+              <p class="p-top__content-example-contents-item-body">
+                変更前：業務量に対しての顧問料が高すぎる気がしていました。毎月相談することも多くなく、税理士からの提案なども少なかったです。 <br />
+                変更後：年間で60万円支払っていた報酬を36万円まで下げることができました。また、融資や節税など税理士からの積極的な提案も多く、非常に満足しています。
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </div>
+    </div>
+    <script>
+        var mySwiper = new Swiper('#sample-swiper', {
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        })
+    </script>
+
+  <div class="p-top__consultation">
+    <h2 class="p-top__consultation-title">
+      税理士に相談できる業務
+    </h2>
+    <ul class="p-top__menu-list">
+      <li class="p-top__menu-item">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-2"></span>
+          <p class="p-top__menu-title">顧問税理士・法人決算</p>
+        </div>
+        <p class="p-top__menu-content">月次の試算表作成や決算書・申告書の作成等、会計や税務に関わるさまざまなサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-9"></span>
+          <p class="p-top__menu-title">個人確定申告</p>
+        </div>
+        <p class="p-top__menu-content">青色申告・白色申告・消費税の申告など様々な税金の確定申告サポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-4"></span>
+          <p class="p-top__menu-title">会社設立・起業</p>
+        </div>
+        <p class="p-top__menu-content">会社の種類や設立の流れ・費用・注意点など会社設立のサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-8"></span>
+          <p class="p-top__menu-title">節税対策</p>
+        </div>
+        <p class="p-top__menu-content">決算期を考慮し、中長期的に支払う税金を軽減・繰越をするサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-1"></span>
+          <p class="p-top__menu-title">事業承継・M&A</p>
+        </div>
+        <p class="p-top__menu-content">月次の試算表作成や決算書・申告書の作成等、会計や税務に関わるさまざまなサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item p-top__menu-item--mobile-none">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-10"></span>
+          <p class="p-top__menu-title">相続税</p>
+        </div>
+        <p class="p-top__menu-content">相続税の算定・申告書作成などのサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item p-top__menu-item--mobile-none">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-7"></span>
+          <p class="p-top__menu-title">融資・資金調達・金融機関対応</p>
+        </div>
+        <p class="p-top__menu-content">おススメの資金調達方法や必要な書類作成や疑問点解決のサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item p-top__menu-item--mobile-none">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-3"></span>
+          <p class="p-top__menu-title">記帳・経理業務サポート</p>
+        </div>
+        <p class="p-top__menu-content">記帳代行や効率的な経理業務構築、減価償却・給与計算などのよくある経理業務のお悩みサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item p-top__menu-item--mobile-none">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-5"></span>
+          <p class="p-top__menu-title">給与計算・年末調整</p>
+        </div>
+        <p class="p-top__menu-content">手間が煩雑な給与計算・年末調整の代行サポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item p-top__menu-item--mobile-none">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-14"></span>
+          <p class="p-top__menu-title">助成金・補助金申請</p>
+        </div>
+        <p class="p-top__menu-content">対象可能な助成金判定や提出書類作成代行のサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item p-top__menu-item--mobile-none">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-11"></span>
+          <p class="p-top__menu-title">海外税務</p>
+        </div>
+        <p class="p-top__menu-content">海外取引をする際の税務面での処理方法や申告のサポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+      <li class="p-top__menu-item p-top__menu-item--mobile-none">
+        <div>
+          <span class="p-top__menu-img p-top__menu-img-13"></span>
+          <p class="p-top__menu-title" style="font-size: 14px">資金繰り表作成・経営指導サポート</p>
+        </div>
+        <p class="p-top__menu-content">資金繰り表作成・業績見通し・決算予測などの作成を行う経営サポート</p>
+        <span class="p-top__menu-v-bar"></span>
+        <span class="p-top__menu-h-bar"></span>
+      </li>
+    </ul>
+    <p class="p-top__menu-more c-mobile-display">もっと見る</p>
+  </div>
+
+  <div class="p-top__map">
+    <h2 class="p-top__map-title">
+      全国から税理士を探すことができます
+    </h2>
+    <div class="p-top__map-contents c-mobile-none">
+      <%= image_tag 'map.svg', alt: 'map'%>
+      <div class="p-top__map-base p-top__map-1">
+        <p class="p-top__map-prefecture"><%= link_to '北海道', search_url(prefecture: "北海道") %></p>
+      </div>
+      <div class="p-top__map-base p-top__map-2">
+        <p class="p-top__map-prefecture"><%= link_to '青森', search_url(prefecture: "青森県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '岩手', search_url(prefecture: "岩手県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '秋田', search_url(prefecture: "秋田県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '山形', search_url(prefecture: "山形県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '宮城', search_url(prefecture: "宮城県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '福島', search_url(prefecture: "福島県") %></p>
+      </div>
+      <div class="p-top__map-base p-top__map-3">
+        <p class="p-top__map-prefecture"><%= link_to '東京', search_url(prefecture: "東京都") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '埼玉', search_url(prefecture: "埼玉県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '神奈川', search_url(prefecture: "神奈川県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '群馬', search_url(prefecture: "群馬県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '千葉', search_url(prefecture: "千葉県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '栃木', search_url(prefecture: "栃木県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '茨城', search_url(prefecture: "茨城県") %></p>
+        <p class="p-top__map-dummy"></p>
+      </div>
+      <div class="p-top__map-base p-top__map-4">
+        <p class="p-top__map-prefecture"><%= link_to '愛知', search_url(prefecture: "愛知県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '富山', search_url(prefecture: "富山県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '静岡', search_url(prefecture: "静岡県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '石川', search_url(prefecture: "石川県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '岐阜', search_url(prefecture: "岐阜県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '福井', search_url(prefecture: "福井県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '新潟', search_url(prefecture: "新潟県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '山梨', search_url(prefecture: "山梨県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '長野', search_url(prefecture: "長野県") %></p>
+        <p class="p-top__map-dummy"></p>
+      </div>
+      <div class="p-top__map-base p-top__map-5">
+        <p class="p-top__map-prefecture"><%= link_to '滋賀', search_url(prefecture: "滋賀県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '大阪', search_url(prefecture: "大阪府") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '京都', search_url(prefecture: "京都府") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '奈良', search_url(prefecture: "奈良県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '兵庫', search_url(prefecture: "兵庫県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '和歌山', search_url(prefecture: "和歌山県") %></p>
+      </div>
+      <div class="p-top__map-base p-top__map-6">
+        <p class="p-top__map-prefecture"><%= link_to '香川', search_url(prefecture: "香川県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '徳島', search_url(prefecture: "徳島県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '愛媛', search_url(prefecture: "愛媛県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '高知', search_url(prefecture: "高知県") %></p>
+      </div>
+      <div class="p-top__map-base p-top__map-7">
+        <p class="p-top__map-prefecture"><%= link_to '岡山', search_url(prefecture: "岡山県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '広島', search_url(prefecture: "広島県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '島根', search_url(prefecture: "島根県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '鳥取', search_url(prefecture: "鳥取県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '山口', search_url(prefecture: "山口県") %></p>
+      </div>
+      <div class="p-top__map-base p-top__map-8">
+        <p class="p-top__map-prefecture"><%= link_to '福岡', search_url(prefecture: "福岡県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '佐賀', search_url(prefecture: "佐賀県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '長崎', search_url(prefecture: "長崎県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '熊本', search_url(prefecture: "熊本県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '大分', search_url(prefecture: "大分県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '宮崎', search_url(prefecture: "宮崎県") %></p>
+        <p class="p-top__map-prefecture"><%= link_to '鹿児島', search_url(prefecture: "鹿児島県") %></p>
+      </div>
+      <div class="p-top__map-base p-top__map-9">
+        <p class="p-top__map-prefecture"><%= link_to '沖縄', search_url(prefecture: "沖縄県") %></p>
+      </div>
+    </div>
+    <div class="p-top__map-contents c-mobile-display">
+      <div class="p-top__map-base-mobile p-top__map-1-mobile">
+        <div class="p-top__map-base-mobile-title p-top__map-base-mobile-title--open" id="map-1-title">北海道・東北</div>
+        <div class="p-top__map-base-mobile-items c-mobile-none" id="map-1-items">
+          <%= link_to "北海道", search_url(prefecture: "北海道"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "青森", search_url(prefecture: "青森県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "岩手", search_url(prefecture: "岩手県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "秋田", search_url(prefecture: "秋田県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "山形", search_url(prefecture: "山形県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "宮城", search_url(prefecture: "宮城県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "福島", search_url(prefecture: "福島県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+        </div>
+      </div>
+      <div class="p-top__map-base-mobile p-top__map-2-mobile">
+        <div class="p-top__map-base-mobile-title p-top__map-base-mobile-title--open" id="map-2-title">関東</div>
+        <div class="p-top__map-base-mobile-items c-mobile-none" id="map-2-items">
+          <%= link_to "東京", search_url(prefecture: "東京都"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "埼玉", search_url(prefecture: "埼玉県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "神奈川", search_url(prefecture: "神奈川県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "群馬", search_url(prefecture: "群馬県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "千葉", search_url(prefecture: "千葉県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "栃木", search_url(prefecture: "栃木県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "茨城", search_url(prefecture: "茨城県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+        </div>
+      </div>
+      <div class="p-top__map-base-mobile p-top__map-3-mobile">
+        <div class="p-top__map-base-mobile-title p-top__map-base-mobile-title--open" id="map-3-title">中部</div>
+        <div class="p-top__map-base-mobile-items c-mobile-none" id="map-3-items">
+          <%= link_to "愛知", search_url(prefecture: "愛知県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "富山", search_url(prefecture: "富山県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "静岡", search_url(prefecture: "静岡県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "石川", search_url(prefecture: "石川県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "岐阜", search_url(prefecture: "岐阜県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "福井", search_url(prefecture: "福井県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "新潟", search_url(prefecture: "新潟県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "山梨", search_url(prefecture: "山梨県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "長野", search_url(prefecture: "長野県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+        </div>
+      </div>
+      <div class="p-top__map-base-mobile p-top__map-4-mobile">
+        <div class="p-top__map-base-mobile-title p-top__map-base-mobile-title--open" id="map-4-title">近畿</div>
+        <div class="p-top__map-base-mobile-items c-mobile-none" id="map-4-items">
+          <%= link_to "滋賀", search_url(prefecture: "滋賀県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "大阪", search_url(prefecture: "大阪県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "京都", search_url(prefecture: "京都県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "奈良", search_url(prefecture: "奈良県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "兵庫", search_url(prefecture: "兵庫県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "和歌山", search_url(prefecture: "和歌山県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+        </div>
+      </div>
+      <div class="p-top__map-base-mobile p-top__map-5-mobile">
+        <div class="p-top__map-base-mobile-title p-top__map-base-mobile-title--open" id="map-5-title">中国・四国</div>
+        <div class="p-top__map-base-mobile-items c-mobile-none" id="map-5-items">
+          <%= link_to "岡山", search_url(prefecture: "岡山県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "広島", search_url(prefecture: "広島県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "島根", search_url(prefecture: "島根県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "鳥取", search_url(prefecture: "鳥取県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "山口", search_url(prefecture: "山口県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "香川", search_url(prefecture: "香川県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "徳島", search_url(prefecture: "徳島県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "愛媛", search_url(prefecture: "愛媛県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "高知", search_url(prefecture: "高知県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+        </div>
+      </div>
+      <div class="p-top__map-base-mobile p-top__map-6-mobile">
+        <div class="p-top__map-base-mobile-title p-top__map-base-mobile-title--open" id="map-6-title">九州・沖縄</div>
+        <div class="p-top__map-base-mobile-items c-mobile-none" id="map-6-items">
+          <%= link_to "福岡", search_url(prefecture: "福岡県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "佐賀", search_url(prefecture: "佐賀県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "長崎", search_url(prefecture: "長崎県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "熊本", search_url(prefecture: "熊本県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "大分", search_url(prefecture: "大分県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "宮崎", search_url(prefecture: "宮崎県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "鹿児島", search_url(prefecture: "鹿児島県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+          <%= link_to "沖縄", search_url(prefecture: "沖縄県"), class: "p-top__map-prefecture p-top__map-prefecture--mobile" %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="p-top__content-head">
+    <div class="p-top__left-column">
+      <div class="p-top__head">
+        <%= react_component('components/SearchBox', render(template: '/home/index.json.jbuilder')) %>
+      </div>
+      <div class="p-top__head">
+        <h2 class="c-title">
+          サービスご利用の流れ
+        </h2>
+        <ul class="p-top__service-list">
+          <li class="p-top__service-item">
+            <p>メールまたは電話でお問い合わせ</p>
+          </li>
+          <li class="p-top__service-item">
+            <p>電話面談で詳しくお聞かせください</p>
+          </li>
+          <li class="p-top__service-item">
+            <p>税理士事務所のご提案</p>
+          </li>
+          <li class="p-top__service-item">
+            <p>税理士事務所と面談</p>
+          </li>
+          <li class="p-top__service-item">
+            <p>税理士決定</p>
+          </li>
+        </ul>
+        <p class="c-link">
+          <%= link_to 'ご利用の流れについて詳しくみる', services_url %>
+        </p>
+        <p class="p-top__btn">
+          <%= link_to contacts_path, class: 'c-btn-cta' do %>
+            税理士紹介を依頼する
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <!-- / p-top__left-column -->
+    <div class="p-top__right-column">
+      <div class="p-top__head">
+        <h2 class="c-title">
+          よく読まれる記事
+        </h2>
+        <ul class="p-top__article-list">
+          <% @recommend_articles.each do |article| %>
+            <li class="p-top__article-item">
+              <% if article.thumbnail_url.present? %>
+                <span class="p-top__article-img">
+                  <%= image_tag article.thumbnail_url %>
+                </span>
+              <% else %>
+                <span class="p-top__article-img">
+                  <%= image_tag 'noimage.png' %>
+                </span>
+              <% end %>
+              <%= link_to article_path(article) do %>
+                <%= article.title %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="p-top__head" style="margin-bottom: 32px">
+        <h2 class="c-title">
+          最新記事
+        </h2>
+        <ul class="p-top__article-list">
+          <% @new_articles.each do |article| %>
+            <li class="p-top__article-item">
+              <% if article.thumbnail_url.present? %>
+                <span class="p-top__article-img">
+                  <%= image_tag article.thumbnail_url %>
+                </span>
+              <% else %>
+                <span class="p-top__article-img">
+                  <%= image_tag 'noimage.png' %>
+                </span>
+              <% end %>
+              <% if article.is_a?(Article) %>
+                <%= link_to article_path(article) do %>
+                  <%= article.title %>
+                <% end %>
+              <% else %>
+                <% p article %>
+                <%= link_to topic_article_path(t_id: "t_#{article.topic_id}", id: article.id) do %>
+                  <%= article.title %>
+                <% end %>
+              <% end %>
+            </li>
+          <% end %>
+        </ul>
+        <p class="c-link">
+          <%= link_to 'もっと見る', articles_path %>
+        </p>
+      </div>
+    </div>
+    <!-- / p-top__right-column -->
+  </div>
+  <!-- / p-top__content-head -->
+</div>
+</div>
+<%= react_component('Dom') %>

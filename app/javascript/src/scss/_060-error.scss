@@ -1,0 +1,11 @@
+.p-error{
+  height: 100vh;
+  text-align: center;
+  margin-top: 32px;
+  &__title{
+    font-size: 1.8rem;
+  }
+  &__txt{
+    font-size: 1.4rem;
+  }
+}

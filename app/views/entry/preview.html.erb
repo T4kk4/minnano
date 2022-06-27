@@ -1,0 +1,53 @@
+<% provide(:head) do %>
+  <meta name="robots" content="noindex">
+<% end %>
+<% breadcrumb :entry %>
+
+<div class="p-contact-confirm">
+  <h1 class="c-title">
+    パートナー登録申請内容確認
+  </h1>
+  <p class="p-contact-confirm__txt">
+    以下の内容で申請を送ります。よろしければ、送信ボタンを押してください。
+  </p>
+  <%= form_for(@entry, url: entry_create_path) do |f| %>
+    <ul class="p-contact-confirm__list">
+      <li class="p-contact-confirm__item">
+        <p class="p-contact-confirm__label">税理士登録番号</p>
+        <p class="p-contact-confirm__content"><%=@entry.tax_account_number %></p>
+        <%= f.hidden_field :tax_account_number, value: @entry.tax_account_number %>
+      </li>
+      <li class="p-contact-confirm__item">
+        <p class="p-contact-confirm__label">姓名</p>
+        <p class="p-contact-confirm__content"><%=@entry.user_name %></p>
+        <%= f.hidden_field :user_name, value: @entry.user_name %>
+      </li>
+      <li class="p-contact-confirm__item">
+        <p class="p-contact-confirm__label">事務所名</p>
+        <p class="p-contact-confirm__content"><%=@entry.office_name %></p>
+        <%= f.hidden_field :office_name, value: @entry.office_name %>
+      </li>
+      <li class="p-contact-confirm__item">
+        <p class="p-contact-confirm__label">事務所所在地</p>
+        <p class="p-contact-confirm__content"><%=@entry.location %></p>
+        <%= f.hidden_field :location, value: @entry.location %>
+      </li>
+      <li class="p-contact-confirm__item">
+        <p class="p-contact-confirm__label">電話番号</p>
+        <p class="p-contact-confirm__content"><%=@entry.phone_number %></p>
+        <%= f.hidden_field :phone_number, value: @entry.phone_number %>
+      </li>
+      <li class="p-contact-confirm__item">
+        <p class="p-contact-confirm__label">メールアドレス</p>
+        <p class="p-contact-confirm__content"><%=@entry.mail_address %></p>
+        <%= f.hidden_field :mail_address, value: @entry.mail_address %>
+      </li>
+    </ul>
+    <p class="p-contact-confirm__btn">
+      <button type="submit" class="c-btn-cta">送信する</button>
+      <a href="javascript:history.back();" class="p-contact-confirm__back">
+        修正する
+      </a>
+    </p>
+  <% end %>
+</div>

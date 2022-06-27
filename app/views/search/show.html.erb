@@ -1,0 +1,78 @@
+<% provide(:head) do %>
+  <meta name="robots" content="noindex">
+<% end %>
+<% breadcrumb :search %>
+<div class="p-result-list">
+  <div class="p-result-list__head">
+    <h1 class="c-title">
+      現在の検索条件
+    </h1>
+    <table class="p-result-list__condition">
+      <tr>
+        <th>都道府県</th>
+        <td><%= params[:prefecture].present? ? params[:prefecture] : '選択していません' %></td>
+      </tr>
+      <tr>
+        <th>市区町村</th>
+        <td><%= params[:city].present? ? params[:city] : '選択していません' %></td>
+      </tr>
+      <tr>
+        <th>業種</th>
+        <td><%= params[:specialty_field].present? ? params[:specialty_field].join(',') : '選択していません' %></td>
+      </tr>
+      <tr>
+        <th>依頼内容</th>
+        <td><%= params[:specialty_industry].present? ? params[:specialty_industry].join(',') : '選択していません' %></td>
+      </tr>
+    </table>
+  </div>
+  <div class="p-result-list__head">
+    <h2 class="c-title">
+      検索結果
+    </h2>
+    <% @tax_accountants.each do |tax_accountant| %>
+      <div class="p-result-list__list">
+        <h3 class="p-result-list__ttl">
+          <%= tax_accountant.office_name %>
+        </h3>
+        <div class="p-result-list__item">
+          <% img_url = tax_accountant.image_url.present? ? tax_accountant.image_url : 'noimage.png' %>
+          <%= image_tag img_url.strip, alt: 'logo', size: '96x96', style: 'object-fit: contain;'%>
+          <table class="p-result-list__summary">
+            <tr>
+              <th>所在地</th>
+              <td><%= tax_accountant.location %></td>
+            </tr>
+            <% if tax_accountant.access.present? %>
+              <tr>
+                <th>アクセス</th>
+                <td><%= tax_accountant.access %></td>
+              </tr>
+            <% end %>
+            <%# if tax_accountant.specialty_field.present? %>
+            <% if false %>
+              <tr>
+                <th>得意分野</th>
+                <td><%= tax_accountant.specialty_field.join(', ') %></td>
+              </tr>
+            <% end %>
+            <%# if tax_accountant.specialty_industry.present? %>
+            <% if false %>
+              <tr>
+                <th>得意業種</th>
+                <td><%= tax_accountant.specialty_industry.join(', ') %></td>
+              </tr>
+            <% end %>
+          </table>
+        </div>
+        <p class="p-result-list__txt"></p>
+        <p class="p-result-list__btn">
+          <%= link_to 'この事務所の詳細をみる', tax_accountant_path(tax_accountant.id) %>
+        </p>
+      </div>
+    <% end %>
+  </div>
+  <div class="p-result-list__page">
+    <%= paginate @tax_accountants, window: 2 %>
+  </div>
+</div>

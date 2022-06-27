@@ -1,0 +1,32 @@
+.p-contact-finish{
+  max-width:1024px; 
+  height: 100vh;
+  margin: 32px 64px 64px 64px;
+  @media screen and (max-width: 480px) {
+    margin: 24px 16px 48px 16px;
+  }
+  &__txt{
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 24px 0 32px 0;
+  }
+  &__btn{
+    text-align: center;
+    a{
+      text-decoration: none;
+      width: 220px;
+      height: 54px;
+      border-radius: 4px;
+      text-align: center;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.3);
+              box-shadow: 0 3px 6px rgba(0,0,0,.3);
+      padding-top:16px;
+      box-sizing: border-box; 
+      &:visited{
+        color: #fff;
+      }
+    }
+  }
+}

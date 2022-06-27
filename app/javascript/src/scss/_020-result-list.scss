@@ -1,0 +1,125 @@
+.p-result-list{
+  max-width:1024px;
+  margin: 32px auto;
+  @media screen and (max-width: 480px) {
+    margin: 24px 16px;
+  }
+  &__ttl{
+    font-size: 1.6rem;
+    color: $main-color;
+  }
+  &__item{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+  &__condition{
+    tr{
+      vertical-align: top;
+    }
+    th{
+      display: inline-block;
+      margin:0 12px 12px 0;
+      font-size: 1.2rem;
+      width: 72px;
+      background: #EAF5FA;
+      color: $main-color;
+    }
+    td{
+      font-size: 1.4rem;
+    }
+  }
+  &__summary{
+    width: 80%;
+    margin-top: 16px;
+    @media screen and (max-width: 896px) {
+      margin-left: 16px;
+    }
+    @media screen and (max-width: 480px) {
+      width: 60%;
+    }
+    th{
+      width: 64px;
+      font-size: 1.2rem;
+      color: $main-color;
+      @media screen and (max-width: 896px) {
+        display: block;
+        width: auto;
+        text-align: left;
+      }
+    }
+    td{
+      font-size: 1.4rem;
+      @media screen and (max-width: 896px) {
+        display: block;
+      }
+    }
+  }
+  &__txt{
+    font-size: 1.4rem;
+    margin:24px 16px 16px 16px;
+  }
+}
+.p-result-list{
+  &__btn{
+    text-align: center;
+    a{
+      display: inline-block;
+      text-decoration: none;
+      background: $sub-color;
+      color: #fff;
+      font-size: 1.6rem;
+      padding-top: 12px;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-weight: bold;
+      width: 210px;
+      height: 48px;
+      border-radius: 4px;
+      -webkit-box-shadow: 0 3px 6px rgba(0,0,0,.3);
+      box-shadow: 0 3px 6px rgba(0,0,0,.3);
+    }
+  }
+  &__page{
+    margin: 48px 0 32px 0px;
+    ul{
+      text-align: center;
+      padding: 0;
+      @media screen and (max-width: 480px) {
+        text-align: center;
+      }
+    }
+    li{
+      display: inline-block;
+      background: #F4F4F4;
+      border-radius: 4px;
+      font-size: 1.2rem;
+      margin-left: 10px;
+      &:first-child{
+        margin-left: 0;
+      }
+      span{
+        display: inline-block;
+        padding: 16px;
+        color: #1d1d1d;
+        border-radius: 4px;
+      }
+
+      a{
+        display: inline-block;
+        text-decoration: none;
+        padding: 16px;
+        color: #1d1d1d;
+        &:visited{
+          color: #1d1d1d;
+        }
+      }
+    }
+    &-watch{
+      background: #BAD9E6;
+    }
+  }
+}

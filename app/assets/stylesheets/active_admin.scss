@@ -1,0 +1,109 @@
+// SASS variable overrides must be declared before loading up Active Admin's styles.
+//
+// To view the variables that Active Admin provides, take a look at
+// `app/assets/stylesheets/active_admin/mixins/_variables.scss` in the
+// Active Admin source.
+//
+// For example, to change the sidebar width:
+// $sidebar-width: 242px;
+
+// Active Admin's got SASS!
+@import "arctic_admin/base";
+
+// Overriding any non-variable SASS must be done after the fact.
+// For example, to change the default status-tag color:
+//
+//   .status_tag { background: #6090DB; }
+
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mt-4 {
+  margin-top: 32px;
+}
+
+.my-admin-input-field {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  input[type="text"], input[type="number"] {
+    margin: 0 16px;
+    width: 68%;
+  }
+
+  input[type="submit"] {
+    margin: 0 16px;
+    width: 16%;
+    @media screen and (max-width: 768px) {
+      margin-top: 16px;
+      width: 100%;
+    }
+    padding: 8px 0;
+  }
+}
+
+.my-admin-actions {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.my-admin-suggestion-container {
+  display: none;
+}
+
+.my-writer-text-field {}
+
+.my-writer-text-area {
+  max-width: 100%;
+  min-width: 100%;
+  min-height: 300px;
+}
+
+.my-writer-height-100 {
+  min-height: 100px;
+}
+
+.my-writer-height-200 {
+  min-height: 200px;
+}
+
+.my-writer-height-300 {
+  min-height: 300px;
+}
+
+input[type="submit"].my-writer-submit {
+  margin-top: 8px;
+  width: 100px;
+  padding: 12px;
+}
+
+.my-writer-top {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  h2 {
+    margin-bottom: 0;
+  }
+
+  a {
+    padding: 8px;
+    font-size: 0.8rem;
+    background-color: #5E6469;
+    color: white;
+    border-radius: 4px;
+  }
+}
+
+.my-thumb-size {
+  object-fit: contain;
+  width: 100px;
+  height: 100px;
+}
