@@ -8,10 +8,10 @@ worker_processes 2
 working_directory root_path
 
 # プロセスIDの保存先を指定
-pid "#{root_path}/tmp/pids/unicorn.pid"
+pid "/var/run/unicorn.pid"
 
 # ポート番号を指定
-listen "#{root_path}/tmp/sockets/unicorn.sock"
+listen "/var/run/unicorn.sock"
 
 # エラーのログを記録するファイルを指定
 stderr_path "#{root_path}/log/unicorn.stderr.log"
