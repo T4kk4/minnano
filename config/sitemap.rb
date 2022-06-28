@@ -1,12 +1,12 @@
 # Set the host name for URL creation
-SitemapGenerator::Sitemap.default_host = 'https://minnano-zeirishi.jp'
-SitemapGenerator::Sitemap.sitemaps_host = 'https://minnano-zeirishi.s3-ap-northeast-1.amazonaws.com'
-SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
-    'minnano-zeirishi',
-    aws_access_key_id: ENV['ACCESS_KEY_ID'],
-    aws_secret_access_key: ENV['SECRET_ACCESS_KEY'],
-    aws_region: 'ap-northeast-1'
-)
+# SitemapGenerator::Sitemap.default_host = 'https://minnano-zeirishi.jp'
+# SitemapGenerator::Sitemap.sitemaps_host = 'https://minnano-zeirishi.s3-ap-northeast-1.amazonaws.com'
+# SitemapGenerator::Sitemap.adapter = SitemapGenerator::AwsSdkAdapter.new(
+#     'minnano-zeirishi',
+#     aws_access_key_id: ENV['ACCESS_KEY_ID'],
+#     aws_secret_access_key: ENV['SECRET_ACCESS_KEY'],
+#     aws_region: 'ap-northeast-1'
+# )
 
 SitemapGenerator::Sitemap.create do
   # Put links creation logic here.
