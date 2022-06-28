@@ -84,5 +84,6 @@ test:
 production:
   <<: *default
   database: app_production
-  username: root
+  username: postgres
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: <%= Rails.application.credentials.db[:hostname] %>
