@@ -82,7 +82,7 @@ gem 'acts_as_list'
 gem 'redcarpet'
 
 gem 'mini_magick'
-# gem 'rmagick'
+gem 'rmagick'
 
 gem 'piet'
 gem 'piet-binary'
