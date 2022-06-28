@@ -86,4 +86,3 @@ production:
   database: app_production
   username: postgres
   password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: <%= Rails.application.credentials.db[:hostname] %>
