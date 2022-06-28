@@ -86,3 +86,4 @@ production:
   database: app_production
   username: postgres
   password: <%= ENV['DATABASE_PASSWORD'] %>
+  host: database-1.cibqzreuy3j9.ap-northeast-1.rds.amazonaws.com
