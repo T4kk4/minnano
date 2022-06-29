@@ -35,8 +35,6 @@ yarn-debug.log*
 public/images/
 db/seeds/
 
-latest.dump
-
 /public/packs
 /public/packs-test
 /node_modules
