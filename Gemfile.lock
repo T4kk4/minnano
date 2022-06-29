@@ -1427,6 +1427,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     rexml (3.2.5)
+    rmagick (4.2.5)
     rubocop (1.22.3)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -1548,6 +1549,7 @@ DEPENDENCIES
   rails (~> 5.2.5)
   react-rails
   redcarpet
+  rmagick
   rubocop
   sass-rails (~> 5.0)
   seed-fu
