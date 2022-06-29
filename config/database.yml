@@ -83,7 +83,7 @@ test:
 #
 production:
   <<: *default
-  database: app_production
+  database: minnano_production
   username: postgres
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  host: database-1.cibqzreuy3j9.ap-northeast-1.rds.amazonaws.com
+  password: Jd6cXU8A
+  host: minnano-db.cibqzreuy3j9.ap-northeast-1.rds.amazonaws.com
