@@ -29,7 +29,7 @@ class EntryController < ApplicationController
     subject = '税理士登録申請が届きました'
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
     mail = SendGrid::Mail.new(from, subject, to, content)
-    sg = SendGrid::API.new(api_key: ENV['SENDGRID_APIKEY']))
+    sg = SendGrid::API.new(api_key: ENV['SENDGRID_APIKEY'])
     sg.client.mail._('send').post(request_body: mail.to_json)
     redirect_to root_path, notice: '内容を送信しました'
   end
