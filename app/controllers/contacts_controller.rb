@@ -30,8 +30,9 @@ class ContactsController < ApplicationController
     EOS
     notifier.ping(msg)
 
-    from = SendGrid::Email.new(email: 'info@em7622.minakawadaiki.com')
-    to = SendGrid::Email.new(email: 'minnzei@blueleaf-partners.co.jp')
+    from = SendGrid::Email.new(email: 'nonbirin09@gmail.com')
+    to = SendGrid::Email.new(email: 'niinuma@totop.jp')
+    # minnzei@blueleaf-partners.co.jp
     subject = 'メッセージが届きました'
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
     mail = SendGrid::Mail.new(from, subject, to, content)
