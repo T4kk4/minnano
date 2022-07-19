@@ -8,7 +8,6 @@ class ContactsController < ApplicationController
   def create
     puts contact_params
     contact = Contact.create(contact_params)
-    notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'])
     user_type =
         if contact.user_type == 0
           "法人"
@@ -28,7 +27,6 @@ class ContactsController < ApplicationController
     市区町村: #{contact.city}
     具体的な内容: #{contact.body}
     EOS
-    notifier.ping(msg)
 
     from = SendGrid::Email.new(email: 'nonbirin09@gmail.com')
     to = SendGrid::Email.new(email: 'niinuma@totop.jp')
