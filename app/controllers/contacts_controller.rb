@@ -6,7 +6,7 @@ class ContactsController < ApplicationController
   end
 
   def create
-
+    redirect_to thanks_path
   end
 
   def thanks
