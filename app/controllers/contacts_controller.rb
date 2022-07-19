@@ -33,7 +33,7 @@ class ContactsController < ApplicationController
     subject = 'メッセージが届きました'
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
     mail = SendGrid::Mail.new(from, subject, to, content)
-    sg = SendGrid::API.new(api_key: "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")
+    sg = SendGrid::API.new(api_key: ENV['SG_API_KEY'])
     sg.client.mail._('send').post(request_body: mail.to_json)
     redirect_to thanks_path
   end
