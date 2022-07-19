@@ -34,8 +34,6 @@ class ContactsController < ApplicationController
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
     mail = SendGrid::Mail.new(from, subject, to, content)
     sg = SendGrid::API.new(api_key: ENV['SENDGRID_APIKEY'])
-    logger.debug(ENV['SENDGRID_APIKEY'])
-    logger.debug("aaaa")
     sg.client.mail._('send').post(request_body: mail.to_json)
     redirect_to thanks_path
   end
