@@ -46,7 +46,39 @@ class ContactsController < ApplicationController
   end
 
   def preview
-    @contact = Contact.new(contact_params)
+    puts contact_params
+    contact = Contact.create(contact_params)
+    notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'])
+    user_type =
+        if contact.user_type == 0
+          "法人"
+        elsif contact.user_type == 1
+          "個人事業主・フリーランス"
+        else
+          "その他個人"
+        end
+    msg =  <<-EOS
+    メッセージが届きました 
+    https://minnano-zeirishi.jp/manager/contacts/#{contact.id}
+    氏名: #{contact.user_name}
+    個人 / 法人: #{user_type}
+    電話番号: #{contact.phone_number}
+    メールアドレス: #{contact.mail_address}
+    都道府県: #{contact.prefecture}
+    市区町村: #{contact.city}
+    具体的な内容: #{contact.body}
+    EOS
+    notifier.ping(msg)
+
+    from = SendGrid::Email.new(email: 'nonbirin09@gmail.com')
+    to = SendGrid::Email.new(email: 'niinuma@totop.jp')
+    # minnzei@blueleaf-partners.co.jp
+    subject = 'メッセージが届きました'
+    content = SendGrid::Content.new(type: 'text/plain', value: msg)
+    mail = SendGrid::Mail.new(from, subject, to, content)
+    sg = SendGrid::API.new(api_key: ENV['SG_API_KEY'])
+    sg.client.mail._('send').post(request_body: mail.to_json)
+    redirect_to thanks_path
   end
 
   private
