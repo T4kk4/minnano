@@ -103,3 +103,5 @@ gem 'aws-sdk'
 gem 'slack-notifier'
 
 gem 'sendgrid-ruby'
+
+gem 'dotenv-rails'
