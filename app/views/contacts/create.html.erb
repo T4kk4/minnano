@@ -1,0 +1,67 @@
+<% provide(:head) do %>
+    <meta name="robots" content="noindex">
+  <% end %>
+  <% breadcrumb :contacts %>
+  <%
+    user_type = if @contact.user_type == 0
+                  '法人'
+                elsif @contact.user_type == 1
+                  '個人事業主・フリーランス'
+                elsif @contact.user_type == 2
+                  'その他個人'
+                end
+  %>
+  <div class="p-contact-confirm">
+    <h1 class="c-title">
+      お問い合わせ内容確認
+    </h1>
+    <p class="p-contact-confirm__txt">
+      以下の内容でお問い合わせを送ります。よろしければ、送信ボタンを押してください。
+    </p>
+    <%= form_for(@contact, url: contact_create_path) do |f| %>
+      <ul class="p-contact-confirm__list">
+        <li class="p-contact-confirm__item">
+          <p class="p-contact-confirm__label">個人 / 法人</p>
+          <p class="p-contact-confirm__content"><%=user_type %></p>
+          <%= f.hidden_field :user_type, value: @contact.user_type %>
+        </li>
+        <li class="p-contact-confirm__item">
+          <p class="p-contact-confirm__label">氏名</p>
+          <p class="p-contact-confirm__content"><%=@contact.user_name %></p>
+          <%= f.hidden_field :user_name, value: @contact.user_name %>
+        </li>
+        <li class="p-contact-confirm__item">
+          <p class="p-contact-confirm__label">電話番号</p>
+          <p class="p-contact-confirm__content"><%=@contact.phone_number %></p>
+          <%= f.hidden_field :phone_number, value: @contact.phone_number %>
+        </li>
+        <li class="p-contact-confirm__item">
+          <p class="p-contact-confirm__label">メールアドレス</p>
+          <p class="p-contact-confirm__content"><%=@contact.mail_address %></p>
+          <%= f.hidden_field :mail_address, value: @contact.mail_address %>
+        </li>
+        <li class="p-contact-confirm__item">
+          <p class="p-contact-confirm__label">都道府県</p>
+          <p class="p-contact-confirm__content"><%=@contact.prefecture %></p>
+          <%= f.hidden_field :prefecture, value: @contact.prefecture %>
+        </li>
+        <li class="p-contact-confirm__item">
+          <p class="p-contact-confirm__label">市区町村</p>
+          <p class="p-contact-confirm__content"><%=@contact.city %></p>
+          <%= f.hidden_field :city, value: @contact.city %>
+        </li>
+        <li class="p-contact-confirm__item">
+          <p class="p-contact-confirm__label">具体的な内容</p>
+          <p class="p-contact-confirm__content"><%=@contact.body %></p>
+          <%= f.hidden_field :body, value: @contact.body %>
+        </li>
+      </ul>
+      <p class="p-contact-confirm__btn">
+        <button type="submit" class="c-btn-cta">お問い合わせ送信</button>
+        <a href="javascript:history.back();" class="p-contact-confirm__back">
+          修正する
+        </a>
+      </p>
+    <% end %>
+  </div>
+  
