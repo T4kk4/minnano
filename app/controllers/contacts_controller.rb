@@ -6,6 +6,10 @@ class ContactsController < ApplicationController
   end
 
   def create
+    puts contact_params
+    contact = Contact.create(contact_params)
+    notifier = Slack::Notifier.new('https://hooks.slack.com/services/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')
+    notifier.ping("a")
     redirect_to thanks_path
   end
 
