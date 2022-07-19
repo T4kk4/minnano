@@ -14,7 +14,6 @@ class EntryController < ApplicationController
   def create
     puts entry_params
     entry = Entry.create(entry_params)
-    notifier = Slack::Notifier.new(ENV['SLACK_WEBHOOK_URL'])
     msg =  <<-EOS
     税理士登録申請が届きました
     https://minnano-zeirishi.jp/manager/entries/#{entry.id}
@@ -24,11 +23,9 @@ class EntryController < ApplicationController
     電話番号: #{entry.phone_number}
     メールアドレス: #{entry.mail_address}
     EOS
-    notifier.ping(msg)
 
-    from = SendGrid::Email.new(email: 'nonbirin09@gmail.com')
+    from = SendGrid::Email.new(email: 'niinuma@totop.jp')
     to = SendGrid::Email.new(email: 'niinuma@totop.jp')
-    # minnzei@blueleaf-partners.co.jp
     subject = '税理士登録申請が届きました'
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
     mail = SendGrid::Mail.new(from, subject, to, content)
