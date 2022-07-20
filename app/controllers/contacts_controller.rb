@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
     EOS
 
     from = SendGrid::Email.new(email: 'info@em1888.nt-dev.work')
-    to = SendGrid::Email.new(email: 'info@nt-dev.work')
+    to = SendGrid::Email.new(email: 'minnzei@blueleaf-partners.co.jp')
     subject = 'メッセージが届きました'
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
     mail = SendGrid::Mail.new(from, subject, to, content)
