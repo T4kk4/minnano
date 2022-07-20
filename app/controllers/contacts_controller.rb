@@ -28,7 +28,7 @@ class ContactsController < ApplicationController
     具体的な内容: #{contact.body}
     EOS
 
-    from = SendGrid::Email.new(email: 'niinuma@totop.jp')
+    from = SendGrid::Email.new(email: 'info@em1888.nt-dev.work')
     to = SendGrid::Email.new(email: 'niinuma@totop.jp')
     subject = 'メッセージが届きました'
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
