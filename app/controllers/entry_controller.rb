@@ -24,8 +24,8 @@ class EntryController < ApplicationController
     メールアドレス: #{entry.mail_address}
     EOS
 
-    from = SendGrid::Email.new(email: 'niinuma@totop.jp')
-    to = SendGrid::Email.new(email: 'niinuma@totop.jp')
+    from = SendGrid::Email.new(email: 'info@em1888.nt-dev.work')
+    to = SendGrid::Email.new(email: 'info@nt-dev.work')
     subject = '税理士登録申請が届きました'
     content = SendGrid::Content.new(type: 'text/plain', value: msg)
     mail = SendGrid::Mail.new(from, subject, to, content)
