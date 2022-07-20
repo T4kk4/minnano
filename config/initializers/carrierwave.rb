@@ -10,6 +10,7 @@ CarrierWave.configure do |config|
         region: 'ap-northeast-1',
     }
     config.fog_directory  = 'buckets.minnano-zeirishi.jp'
+    config.asset_host = "https://assets.minnano-zeirishi.jp"
     config.cache_storage = :fog
     config.fog_attributes = { cache_control: "public, max-age=#{365.days.to_i}" }
     config.fog_public = true
